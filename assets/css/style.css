@@ -1,0 +1,10 @@
+.nav-link.nav-link-active .sub-menu.sub-menu-open , .sub-menu li.sub-menu-li-active .inner-sub-menu.inner-sub-menu-open{
+    display: block;
+}
+.modal.is-visible {
+    visibility: visible;
+}
+
+.modal-overlay.overlay-visible {
+    display: block;
+}

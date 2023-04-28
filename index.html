@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sunrx</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class"
+        };
+    </script>
+</head>
+
+<body class="h-full bg-gray-100 dark:bg-gray-700">
+    <div class="min-h-full">
+        <nav class="bg-white dark:bg-gray-800 relative">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex gap-2">
+                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                alt="Your Company">
+                            <h2 class="text-lg font-bold leading-7 text-gray-900 dark:text-gray-100">
+                                Sunrx
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="hidden xl:block">
+                        <div>
+                            <ul class="ml-10 flex items-baseline space-x-4">
+                                <li class="nav-link py-2">
+                                    <a href="dashboard.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="qualified-claims.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Qualified
+                                        Claims</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="audit.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Audit</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="messages.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Messages</a>
+                                </li>
+                                <li class="nav-link relative py-2">
+                                    <a href="#"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium flex gap-1 items-center">
+                                        <Span>Reports</Span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <div class="sub-menu hidden">
+                                        <ul
+                                            class="absolute dark:bg-gray-800 left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <li>
+                                                <a href="claims.html"
+                                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Claims</a>
+                                            </li>
+                                            <li class="relative">
+                                                <a href="#"
+                                                    class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                                    <span>Provider</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-3 h-3">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                    </svg>
+
+                                                </a>
+                                                <div class="inner-sub-menu hidden">
+                                                    <ul
+                                                        class="absolute dark:bg-gray-800 -right-full top-0 z-10 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="qulified-provider.html">Qualified</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="not-qulified-provider.html">Not Qualified</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                            <li class="relative">
+                                                <a href="#"
+                                                    class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                                    <span>Pharmacy</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-3 h-3">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                    </svg>
+
+                                                </a>
+                                                <div class="inner-sub-menu hidden">
+                                                    <ul
+                                                        class="absolute dark:bg-gray-800 -right-full top-0 z-10 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="all-pharmacy.html">All</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="qulified-pharmacy.html">Qualified</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">Not Qualified</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">Disqualified</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div>
+                            <div class="ml-4 flex items-center md:ml-6">
+                                <div class="flex">
+                                    <!-- Dark mode switcher -->
+                                    <button id="theme-toggle" type="button"
+                                        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                                            </path>
+                                        </svg>
+                                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                    <!-- Dark mode switcher end -->
+                                </div>
+
+                                <!-- Profile dropdown -->
+                                <div class="relative ml-3 hidden xl:block">
+                                    <div class="profile-btn">
+                                        <button type="button"
+                                            class="flex max-w-xs items-center rounded-full bg-white dark:bg-gray-800 text-sm"
+                                            id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                            <span class="sr-only">Open user menu</span>
+                                            <img class="h-8 w-8 rounded-full"
+                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-3">
+                                                <div
+                                                    class="text-left text-base font-medium leading-none text-black dark:text-white">
+                                                    Tom Cook
+                                                </div>
+                                            </div>
+                                        </button>
+
+                                    </div>
+                                    <div class="profile-list absolute hidden dark:bg-gray-800 right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                        role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                        tabindex="-1">
+                                        <!-- Active: "bg-gray-100", Not Active: "" -->
+                                        <a href="change-password.html"
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            role="menuitem" tabindex="-1" id="user-menu-item-0">Change Password</a>
+                                        <a href="invoice-list.html"
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            role="menuitem" tabindex="-1" id="user-menu-item-1">Invoice List</a>
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            role="menuitem" tabindex="-1" id="user-menu-item-2">Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="-mr-2 flex xl:hidden">
+                            <!-- Mobile menu button -->
+                            <button type="button"
+                                class="mobile-menu-btn inline-flex items-center justify-center rounded-md p-2 bg-white text-gray-700 dark:text-gray-400 dark:bg-gray-800"
+                                aria-controls="mobile-menu" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <!-- Menu open: "hidden", Menu closed: "block" -->
+                                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                                <!-- Menu open: "block", Menu closed: "hidden" -->
+                                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="xl:hidden absolute left-0 bg-white dark:bg-gray-700 w-full z-40">
+                <div class="hidden max-h-72 overflow-y-auto " id="mobile-menu">
+                    <ul class=" space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                        <li class="mobile-nav-link">
+                            <a href="dashboard.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="qualified-claims.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Qualified
+                                Claims</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="audit.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Audit</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="messages.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Messages</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="#"
+                                class="flex items-center justify-between text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                                <span>Reports</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </a>
+                            <ul class="space-y-1 px-2 pb-3 pt-2 sm:px-3 mobile-sub-menu hidden">
+                                <li>
+                                    <a href="claims.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Claims</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="flex items-center justify-between text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                                        <span>Provider</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="space-y-1 px-2 pb-3 pt-2 sm:px-3 mobile-inner-sub-menu hidden">
+                                        <li>
+                                            <a href="qulified-provider.html"
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Qualified</a>
+                                        </li>
+                                        <li>
+                                            <a href="not-qulified-provider.html"
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Not
+                                                Qualified</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="flex items-center justify-between text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                                        <span>Pharmacy</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="space-y-1 px-2 pb-3 pt-2 sm:px-3 mobile-inner-sub-menu hidden">
+                                        <li>
+                                            <a href="all-pharmacy.html"
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">All</a>
+                                        </li>
+                                        <li>
+                                            <a href="qulified-pharmacy.html"
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Qualified</a>
+                                        </li>
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Not
+                                                Qualified</a>
+                                        </li>
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Disqualified</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="border-t border-gray-700 pb-3 pt-4">
+                        <div class="flex items-center px-5">
+                            <div class="flex-shrink-0">
+                                <img class="h-10 w-10 rounded-full"
+                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="">
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-base font-medium leading-none text-gray-700 dark:text-white">Tom Cook
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 space-y-1 px-2">
+                            <a href="change-password.html"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Change
+                                Password</a>
+                            <a href="invoice-list.html"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Invoice
+                                List</a>
+                            <a href="#"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Log
+                                Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+                <div class="lg:flex lg:items-center lg:justify-between pb-8 pt-4">
+                    <div class="min-w-0 flex-1">
+                        <h2
+                            class="text-2xl font-bold leading-7 text-gray-900 dark:text-gray-100 sm:truncate sm:text-3xl sm:tracking-tight">
+                            Dashboard</h2>
+                    </div>
+                    <div class="mt-5 flex flex-wrap gap-4 lg:ml-4 lg:mt-0">
+                        <div>
+                            <!-- <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Price</label> -->
+                            <button type="button" id="reportrange"
+                                class="relative w-full cursor-default rounded-md bg-white py-1.5 px-3 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
+                                aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                                <div class="flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                                      </svg>
+                                      
+
+                                    <div
+                                        class="flex items-center ml-3 block truncate dropdown-content w-[calc(100%-1.5rem)]">
+                                        <span class="font-normal block truncate"></span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                        <span>
+                            <button type="button"
+                                class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
+                                Search
+                            </button>
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Qualified &
+                        Non-Qualified Claims</h3>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">Qualified</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $450016.06
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #913</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">Not Qualified</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $0.00
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #0</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $5117.81
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #15</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">For Diagnosis
+                    </h3>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">No Data</dt>
+                        </div>
+                    </dl>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Qualified Providers
+                    </h3>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">DANICICH, MICHELE:</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="mt-6">
+                    <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Not Qualified Providers
+                    </h3>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- <div class="mt-6">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Patients
+                        </h3>
+                        <div class="flex items-center flex-wrap">
+                            <div class="relative rounded-md shadow-sm">
+                                <input type="number" name="patients" id="patients"
+                                    class="block w-full rounded-md border-0 py-1.5 px-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    placeholder="No of Patients">
+                            </div>
+                            <span>
+                                <button type="button"
+                                    class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                                    Fetch
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">YOUNG, CINDY:</dt>
+                            <dt class=" text-sm font-medium text-gray-500 dark:text-gray-400">Pending</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    $2855.93
+                                    <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span>
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                </div> -->
+
+
+                <div class="mt-6">
+                    <div class="lg:flex items-center justify-between">
+                        <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">Claims by BIN, PCN &
+                            Group Number
+                        </h3>
+                        <div class="mt-3 lg:mt-0 flex gap-3 items-center flex-wrap">
+                            <div>
+                                <!-- <label id="listbox-label"
+                                    class="block text-sm font-medium leading-6 text-gray-900">Assigned to</label> -->
+                                <div class="relative">
+                                    <div class="dropdown-btn">
+                                        <button type="button"
+                                            class="relative w-36 cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
+                                            aria-haspopup="listbox" aria-expanded="true"
+                                            aria-labelledby="listbox-label">
+                                            <span class="dropdown-content block truncate">Select Month</span>
+                                            <span
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                                    fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown-list hidden absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white dark:bg-gray-500 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm"
+                                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                        aria-activedescendant="listbox-option-3">
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">January</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">February</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">March</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">April</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">May</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">June</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">July</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">August</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">September</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">October</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">November</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">December</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <!-- <label id="listbox-label"
+                                    class="block text-sm font-medium leading-6 text-gray-900">Assigned to</label> -->
+                                <div class="relative">
+                                    <div class="dropdown-btn">
+                                        <button type="button"
+                                            class="relative w-36 cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm leading-6 hover:cursor-pointer  dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
+                                            aria-haspopup="listbox" aria-expanded="true"
+                                            aria-labelledby="listbox-label">
+                                            <span class="dropdown-content block truncate">Select Year</span>
+                                            <span
+                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                                    fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd"
+                                                        d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                                                        clip-rule="evenodd" />
+                                                </svg>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <ul class="dropdown-list hidden absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white dark:bg-gray-500 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-sm"
+                                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                        aria-activedescendant="listbox-option-3">
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">2020</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">2021</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">2022</span>
+                                            </div>
+                                        </li>
+                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                            id="listbox-option-0" role="option">
+                                            <div class="flex items-center">
+                                                <span class="font-normal block truncate">2023</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span>
+                                <button type="button"
+                                    class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
+                                    Fetch
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                    <dl
+                        class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">BIN</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    610602
+                                    <!-- <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span> -->
+                                </div>
+
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">BIN</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    610602
+                                    <!-- <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span> -->
+                                </div>
+
+                            </dd>
+                        </div>
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">BIN</dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    610602
+                                    <!-- <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">from
+                                        #6</span> -->
+                                </div>
+
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- <div class="mt-6">
+                    <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">NET Entity Savings
+                    </h3>
+                    <dl class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">$ 155785.66</dt>
+                        </div>
+                    </dl>
+                </div> -->
+
+                <!-- <div class="mt-6">
+                    <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">No Encounter Claims
+                    </h3>
+                    <dl class="mt-5 grid grid-cols-1 divide-y divide-gray-200 dark:divide-gray-500 overflow-hidden rounded-lg bg-white dark:bg-gray-600 shadow md:grid-cols-3 md:divide-x md:divide-y-0">
+                        <div class="px-4 py-5 sm:p-6">
+                            <dt class="text-base font-normal text-gray-900 dark:text-white">Count </dt>
+                            <dd class="mt-1 flex items-baseline justify-between md:block lg:flex">
+                                <div class="flex items-baseline text-2xl font-semibold text-indigo-600 dark:text-white">
+                                    0
+                                </div>
+                            </dd>
+                        </div>
+                    </dl>
+                </div> -->
+
+            </div>
+
+
+
+        </main>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+</body>
+
+</html>

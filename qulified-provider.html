@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualified Provider - Sunrx</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script>
+        tailwind.config = {
+            darkMode: "class"
+        };
+    </script>
+</head>
+
+<body class="h-full bg-white dark:bg-gray-700">
+    <div class="min-h-full">
+        <nav class="bg-white dark:bg-gray-800 relative">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-16 items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 flex gap-2">
+                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                                alt="Your Company">
+                            <h2 class="text-lg font-bold leading-7 text-gray-900 dark:text-gray-100">
+                                Sunrx
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="hidden xl:block">
+                        <div>
+                            <ul class="ml-10 flex items-baseline space-x-4">
+                                <li class="nav-link py-2">
+                                    <a href="dashboard.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="qualified-claims.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Qualified
+                                        Claims</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="audit.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Audit</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="messages.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Messages</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="invoice-list.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Invoice</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="#"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Notes</a>
+                                </li>
+                                <li class="nav-link relative py-2">
+                                    <a href="#"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium flex gap-1 items-center">
+                                        <Span>Reports</Span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <div class="sub-menu hidden">
+                                        <ul
+                                            class="absolute dark:bg-gray-800 left-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <li>
+                                                <a href="claims.html"
+                                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Claims</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Claims
+                                                    Invoice</a>
+                                            </li>
+                                            <li class="relative">
+                                                <a href="#"
+                                                    class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                                    <span>Provider</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-3 h-3">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                    </svg>
+
+                                                </a>
+                                                <div class="inner-sub-menu hidden">
+                                                    <ul
+                                                        class="absolute dark:bg-gray-800 -right-full top-0 z-10 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">Qualified</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">Not Qualified</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                            <li class="relative">
+                                                <a href="#"
+                                                    class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">
+                                                    <span>Pharmacy</span>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-3 h-3">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                                    </svg>
+
+                                                </a>
+                                                <div class="inner-sub-menu hidden">
+                                                    <ul
+                                                        class="absolute dark:bg-gray-800 -right-full top-0 z-10 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">All</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">Qualified</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">Not Qualified</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                                href="">Disqualified</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+                                            <li>
+                                                <a href="#"
+                                                    class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Debug
+                                                    Report</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div>
+                            <div class="ml-4 flex items-center md:ml-6">
+                                <div class="flex">
+                                    <!-- Dark mode switcher -->
+                                    <button id="theme-toggle" type="button"
+                                        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+                                            </path>
+                                        </svg>
+                                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor"
+                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                    <!-- Dark mode switcher end -->
+                                </div>
+
+                                <!-- Profile dropdown -->
+                                <div class="relative ml-3 hidden xl:block">
+                                    <div class="profile-btn">
+                                        <button type="button"
+                                            class="flex max-w-xs items-center rounded-full bg-white dark:bg-gray-800 text-sm"
+                                            id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                            <span class="sr-only">Open user menu</span>
+                                            <img class="h-8 w-8 rounded-full"
+                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-3">
+                                                <div
+                                                    class="text-left text-base font-medium leading-none text-black dark:text-white">
+                                                    Tom Cook
+                                                </div>
+                                            </div>
+                                        </button>
+
+                                    </div>
+                                    <div class="profile-list absolute hidden dark:bg-gray-800 right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                        role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                        tabindex="-1">
+                                        <!-- Active: "bg-gray-100", Not Active: "" -->
+                                        <a href="change-password.html"
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            role="menuitem" tabindex="-1" id="user-menu-item-0">Change Password</a>
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            role="menuitem" tabindex="-1" id="user-menu-item-1">Invoice List</a>
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                            role="menuitem" tabindex="-1" id="user-menu-item-2">Log Out</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="-mr-2 flex xl:hidden">
+                            <!-- Mobile menu button -->
+                            <button type="button"
+                                class="mobile-menu-btn inline-flex items-center justify-center rounded-md p-2 bg-white text-gray-700 dark:text-gray-400 dark:bg-gray-800"
+                                aria-controls="mobile-menu" aria-expanded="false">
+                                <span class="sr-only">Open main menu</span>
+                                <!-- Menu open: "hidden", Menu closed: "block" -->
+                                <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                                <!-- Menu open: "block", Menu closed: "hidden" -->
+                                <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="xl:hidden absolute left-0 bg-white dark:bg-gray-700 w-full z-40">
+                <div class="hidden max-h-72 overflow-y-auto " id="mobile-menu">
+                    <ul class=" space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                        <li class="mobile-nav-link">
+                            <a href="dashboard.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="qualified-claims.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Qualified
+                                Claims</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="audit.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Audit</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="messages.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Messages</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="invoice-list.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Invoice</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="#"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Notes</a>
+                        </li>
+                        <!-- <li class="mobile-nav-link">
+                            <a href="#"
+                                class="flex items-center justify-between text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                                <span>API</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </a>
+                            <ul class="space-y-1 px-2 pb-3 pt-2 sm:px-3 mobile-sub-menu hidden">
+                                <li>
+                                    <a href=""
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Action
+                                        Needed</a>
+                                </li>
+                            </ul>
+                        </li> -->
+                        <li class="mobile-nav-link">
+                            <a href="#"
+                                class="flex items-center justify-between text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                                <span>Reports</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </a>
+                            <ul class="space-y-1 px-2 pb-3 pt-2 sm:px-3 mobile-sub-menu hidden">
+                                <li>
+                                    <a href="claims.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Claims</a>
+                                </li>
+                                <li>
+                                    <a href=""
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Claims
+                                        Invoice</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="flex items-center justify-between text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                                        <span>Provider</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="space-y-1 px-2 pb-3 pt-2 sm:px-3 mobile-inner-sub-menu hidden">
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Qualified</a>
+                                        </li>
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Not
+                                                Qualified</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="flex items-center justify-between text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">
+                                        <span>Pharmacy</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-3 h-3">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul class="space-y-1 px-2 pb-3 pt-2 sm:px-3 mobile-inner-sub-menu hidden">
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">All</a>
+                                        </li>
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Qualified</a>
+                                        </li>
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Not
+                                                Qualified</a>
+                                        </li>
+                                        <li>
+                                            <a href=""
+                                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Disqualified</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href=""
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Debug
+                                        Report</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="border-t border-gray-700 pb-3 pt-4">
+                        <div class="flex items-center px-5">
+                            <div class="flex-shrink-0">
+                                <img class="h-10 w-10 rounded-full"
+                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    alt="">
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-base font-medium leading-none text-gray-700 dark:text-white">Tom Cook
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3 space-y-1 px-2">
+                            <a href="change-password.html"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Change
+                                Password</a>
+                            <a href="#"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Invoice
+                                List</a>
+                            <a href="#"
+                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Log
+                                Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <div class="bg-white dark:bg-gray-700">
+                <div>
+                    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div
+                            class="md:flex items-baseline justify-between pb-6 pt-16 border-b border-gray-200 dark:border-gray-600">
+                            <h1 class="pb-4 md:pb-0 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                Qualified Provider
+                            </h1>
+                            <div class="mt-5 flex flex-wrap justify-start gap-4 lg:ml-4 lg:mt-0">
+                                <div>
+                                    <!-- <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Price</label> -->
+                                    <button type="button" id="reportrange"
+                                        class="relative w-full cursor-default rounded-md bg-white py-1.5 px-3 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
+                                        aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                                        <div class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z">
+                                                </path>
+                                            </svg>
+
+
+                                            <div
+                                                class="flex items-center ml-3 block truncate dropdown-content w-[calc(100%-1.5rem)]">
+                                                <span class="font-normal block truncate">30 March 2023 - 28 April
+                                                    2023</span>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                                <span>
+                                    <button type="button"
+                                        class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
+                                        Submit
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <section aria-labelledby="products-heading" class="pb-24 pt-12">
+                            <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
+                                <div class="lg:col-span-4">
+                                    <div class="px-4 sm:px-6 lg:px-8">
+                                        <div class=" flex items-center flex-wrap justify-between pb-6">
+                                            <div clss="flex pb-10 items-center justify-between flex-wrap gap-y-2">
+                                                <div class="text-sm">
+                                                    <span class="dark:text-white">Showing</span>
+                                                    <span class="font-medium text-indigo-600 dark:text-indigo-500">1-20</span>
+                                                    <span class="dark:text-white">of</span>
+                                                    <span class="text-indigo-600 dark:text-indigo-500 font-medium">916</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <div class="relative">
+                                                    <div class="filter-dropdown-btn">
+                                                        <button type="button"
+                                                            class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
+                                                            aria-haspopup="listbox" aria-expanded="true"
+                                                            aria-labelledby="listbox-label">
+                                                            <span class="truncate">Show: </span>
+                                                            <span class="truncate dropdown-content">
+                                                                <span class="font-normal truncate">10</span>
+                                                            </span>
+                                                            <span
+                                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                                                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                                                    fill="currentColor" aria-hidden="true">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <ul class="filter-dropdown-list hidden absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-gray-500 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                                                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                                        aria-activedescendant="listbox-option-3">
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">10</span>
+                                                        </li>
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">25</span>
+                                                        </li>
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">50</span>
+                                                        </li>
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">100</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- <div class="flex items-center gap-2 hover:cursor-pointer filter-show">
+                                                    <p class="text-sm text-gray-900 dark:text-white">Filters</p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4 dark:text-white">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                                                    </svg>
+                                                </div> -->
+
+                                            </div>
+
+
+                                        </div>
+                                        <div>
+                                            <div class="mt-8 flow-root">
+                                              <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                                  <table class="min-w-full">
+                                                    <thead class="bg-white dark:bg-gray-700">
+                                                      <tr>
+                                                        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase sm:pl-3">Pharmacy Name</th>
+                                                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Patient Name</th>
+                                                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Status</th>
+                                                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Provider Npi</th>
+                                                        <th scope="col" class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Rx-fill</th> 
+                                                        <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-3 text-right text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                            Taxonomy
+                                                        </th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody class="bg-white dark:bg-gray-700">
+                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
+                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3"> COOPER GILMER, KARA</th>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
+                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">PFLUGRATH, ADAM</th>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
+                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">PFLUGRATH, ADAM</th>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            Savitz Drug Store
+                                                        </a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">CRAWLEY, MARVIN</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        <nav
+                                            class="flex items-center justify-between border-t border-gray-200 dark:border-gray-600 px-4 sm:px-0 my-6">
+                                            <div class="-mt-px flex w-0 flex-1">
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">
+                                                    <svg class="mr-3 h-5 w-5 text-gray-400 dark:text-white"
+                                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                            d="M18 10a.75.75 0 01-.75.75H4.66l2.1 1.95a.75.75 0 11-1.02 1.1l-3.5-3.25a.75.75 0 010-1.1l3.5-3.25a.75.75 0 111.02 1.1l-2.1 1.95h12.59A.75.75 0 0118 10z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                    Previous
+                                                </a>
+                                            </div>
+                                            <div class="hidden md:-mt-px md:flex">
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">1</a>
+                                                <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-indigo-500 px-4 pt-4 text-sm font-medium text-indigo-600"
+                                                    aria-current="page">2</a>
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">3</a>
+                                                <span
+                                                    class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500">...</span>
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">8</a>
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">9</a>
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">10</a>
+                                            </div>
+                                            <div class="-mt-px flex w-0 flex-1 justify-end">
+                                                <a href="#"
+                                                    class="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">
+                                                    Next
+                                                    <svg class="ml-3 h-5 w-5 text-gray-400 dark:text-white"
+                                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd"
+                                                            d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z"
+                                                            clip-rule="evenodd" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+
+
+                    <div class="relative z-10" role="dialog" aria-modal="true">
+                        <!--
+                          Background backdrop, show/hide based on slide-over state.
+                      
+                          Entering: "ease-in-out duration-500"
+                            From: "opacity-0"
+                            To: "opacity-100"
+                          Leaving: "ease-in-out duration-500"
+                            From: "opacity-100"
+                            To: "opacity-0"
+                        -->
+                        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity drawer-overlay hidden">
+                        </div>
+
+                        <div
+                            class="fixed inset-0 overflow-hidden drawer-modal translate-x-full ease-in-out duration-300">
+                            <div class="absolute inset-0 overflow-hidden">
+                                <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                                    <div class="pointer-events-auto relative w-96">
+                                        <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                                            <button type="button"
+                                                class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+                                                <span class="sr-only">Close panel</span>
+                                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                    stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6 18L18 6M6 6l12 12" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="h-full overflow-y-auto bg-white dark:bg-gray-700 p-8">
+                                            <div class="space-y-6 pb-16">
+                                                <div>
+                                                    <div
+                                                        class="aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg">
+                                                        <img src="https://placehold.co/600x400" alt=""
+                                                            class="object-cover">
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-medium text-gray-900 dark:text-white">Information
+                                                    </h3>
+                                                    <dl
+                                                        class="mt-2 divide-y divide-gray-200 dark:divide-gray-600 border-b border-t border-gray-200 dark:border-gray-600">
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Doctor Name</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">COOPER GILMER, KARA</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Pharmacy Name</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">Savitz Drug Store</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Claims</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">#01</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Patient Name</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">Susan</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Status</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">Qualified</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">provider NPI
+                                                            </dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">1437387354</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">RX-Fill</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">000006976480-01</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Toxonomy</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">363LF0000X</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Toxonomy description</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">Lorem ipsum dolor...</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">NDC Description</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">CARBIDOPA 25 MG TABLET</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Claims Details</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">claim_50724
+                                                            </dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Claims Amount</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">$357.49</dd>
+                                                        </div>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden modal-overlay">
+                        </div>
+                        <div class="fixed inset-0 z-10 overflow-y-auto invisible modal">
+                            <div
+                                class="bg-white dark:bg-gray-700 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 w-full sm:w-1/2 mx-auto">
+                                <div class="px-4 sm:px-0 flex justify-between items-center">
+                                    <h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Patient
+                                        Details</h3>
+                                    <span class="modal-toogle hover:cursor-pointer dark:text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+
+                                    </span>
+                                </div>
+                                <div class="mt-6 border-t border-gray-100 dark:border-gray-600">
+                                    <dl class="divide-y divide-gray-100 dark:divide-gray-600">
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Full
+                                                name</dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                Margot Foster</dd>
+                                        </div>
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                                                Third Party Payment </dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                $845.18</dd>
+                                        </div>
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                                                Patient Copay</dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                $70</dd>
+                                        </div>
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Cost
+                                                Of Goods</dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                $5.99267</dd>
+                                        </div>
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                                                Pharmacy Dispense</dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                $366.07</dd>
+                                        </div>
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                                                Invoice Link</dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                No Invoice Found</dd>
+                                        </div>
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                                                Outgoing Notes </dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                <a href="#" class="hover:text-indigo-600">View Note</a>
+                                            </dd>
+                                        </div>
+                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                                                Incoming Notes</dt>
+                                            <dd
+                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
+                                                No Notes Found</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+</body>
+
+</html>
