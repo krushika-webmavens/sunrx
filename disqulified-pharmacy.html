@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit - Sunrx</title>
+    <title>Disqualified Pharmacy - Sunrx</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -354,394 +354,263 @@
         <main>
             <div class="bg-white dark:bg-gray-700">
                 <div>
-                    <div class="relative z-40" role="dialog" aria-modal="true">
-
-                        <div class="fixed inset-0 bg-black bg-opacity-25 filter-overlay hidden"></div>
-
-                        <div class="fixed inset-0 z-40 flex filter-modal translate-x-full duration-300">
-                            <div
-                                class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white dark:bg-gray-700 py-4 pb-12 shadow-xl ">
-                                <div class="flex items-center justify-between px-4">
-                                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">Filters</h2>
-                                    <button type="button"
-                                        class="filter-hide -mr-2 flex h-10 w-10 items-center justify-center rounded-md bg-white dark:bg-gray-700 p-2 text-gray-400">
-                                        <span class="sr-only">Close menu</span>
-                                        <svg class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <!-- Filters -->
-                                <form class="mt-4 border-t border-gray-200 dark:border-gray-600 relative">
-                                    <h3 class="sr-only">Filters</h3>
-                                    <div class="px-4 py-6">
-                                        <!-- <label for="pharmacy-name"
-                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Pharmacy
-                                            Name</label> -->
-                                        <div class="relative mt-2 rounded-md shadow-sm">
-                                            <div
-                                                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                            </div>
-                                            <input type="text" name="npi" id="npi"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
-                                                placeholder="NPI">
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 dark:border-gray-600 px-4 py-6">
-                                        <!-- <label for="patient-name"
-                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Patient
-                                            Name</label> -->
-                                        <div class="relative mt-2 rounded-md shadow-sm">
-                                            <div
-                                                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                            </div>
-                                            <input type="text" name="doctor-name" id="doctor-name"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
-                                                placeholder="Doctor Name">
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 dark:border-gray-600 px-4 py-6">
-                                        <!-- <label for="net-savings"
-                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Net
-                                            Savings</label> -->
-                                        <div class="relative mt-2 rounded-md shadow-sm">
-                                            <input type="text" name="net-savings" id="net-savings"
-                                                class="block w-full rounded-md border-0 py-1.5 pr-7 pl-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
-                                                placeholder="Claim Amount">
-                                            <div class="absolute inset-y-0 left-0 flex items-center">
-                                                <label for="symbol" class="sr-only">symbol</label>
-                                                <select id="symbol" name="symbol"
-                                                    class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 dark:text-gray-200 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:ring-gray-500 dark:focus:ring-indigo-500 sm:text-sm">
-                                                    <option>&gt;</option>
-                                                    <option>&ge;</option>
-                                                    <option>&lt;</option>
-                                                    <option>&le;</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 dark:border-gray-600 px-4 py-6">
-                                        <!-- <label for="ndc-dec"
-                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">NDC
-                                            Description</label> -->
-                                        <div class="relative mt-2 rounded-md shadow-sm">
-                                            <div
-                                                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                            </div>
-                                            <input type="text" name="taxonomy" id="taxonomy"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
-                                                placeholder="Taxonomy">
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 dark:border-gray-600 px-4 py-6">
-                                        <!-- <label for="ndc-dec"
-                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">NDC
-                                            Description</label> -->
-                                        <div class="relative mt-2 rounded-md shadow-sm">
-                                            <div
-                                                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                            </div>
-                                            <input type="text" name="taxonomy-name" id="taxonomy-name"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
-                                                placeholder="Taxonomy Name">
-                                        </div>
-                                    </div>
-                                    <div class="border-t border-gray-200 dark:border-gray-600 px-4 py-6">
-                                        <!-- <label for="provider"
-                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Provider</label> -->
-                                        <div class="relative mt-2 rounded-md shadow-sm">
-                                            <div
-                                                class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                            </div>
-                                            <input type="text" name="Fax" id="Fax"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
-                                                placeholder="Fax">
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="flex flex-wrap gap-4 fixed right-24 bottom-4">
-                                    <span>
-                                        <button type="button"
-                                            class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
-                                            Apply
-                                        </button>
-                                    </span>
-                                    <span>
-                                        <button type="button"
-                                            class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
-                                            Reset
-                                        </button>
-                                    </span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
-                        <div class="md:flex items-baseline justify-between pb-6 pt-16 border-b border-gray-200 dark:border-gray-600">
+                    <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div
+                            class="md:flex items-baseline justify-between pb-6 pt-16 border-b border-gray-200 dark:border-gray-600">
                             <h1 class="pb-4 md:pb-0 text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                Audit
+                                Disualified Pharmacy
                             </h1>
+                            <div class="mt-5 flex flex-wrap justify-start gap-4 lg:ml-4 lg:mt-0">
+                                <div>
+                                    <!-- <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Price</label> -->
+                                    <button type="button" id="reportrange"
+                                        class="relative w-full cursor-default rounded-md bg-white py-1.5 px-3 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
+                                        aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                                        <div class="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z">
+                                                </path>
+                                            </svg>
 
-                            <!-- <div class="flex flex-wrap gap-4 ">
-                                <span>
-                                    <button type="button"
-                                        class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
-                                        Download Notes
-                                    </button>
-                                </span>
-                                <span>
-                                    <button type="button"
-                                        class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
-                                        Invoice List
-                                    </button>
-                                </span>
-                            </div> -->
-                        </div>
 
-                        <!-- <div class="border-b border-gray-200 dark:border-gray-600 pb-6 dark:bg-gray-700">
-                            <div class="mx-auto max-w-7xl">
-                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                                    <div
-                                        class="bg-white dark:bg-gray-600 px-4 py-6 sm:px-6 lg:px-8 border border-gray-200 dark:border-gray-600 rounded-lg">
-                                        <p class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Total
-                                            Net Savings</p>
-                                        <p class="mt-2 flex items-baseline gap-x-2">
-                                            <span
-                                                class="text-3xl font-semibold tracking-tight text-indigo-600 dark:text-white">$451539.71</span>
-                                        </p>
-                                    </div>
-                                    <div
-                                        class="bg-white dark:bg-gray-600 px-4 py-6 sm:px-6 lg:px-8 border border-gray-200 dark:border-gray-600 rounded-lg">
-                                        <p class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Net
-                                            Entity
-                                            Savings</p>
-                                        <p class="mt-2 flex items-baseline gap-x-2">
-                                            <span
-                                                class="text-3xl font-semibold tracking-tight text-indigo-600 dark:text-white">$451539.71</span>
-                                        </p>
-                                    </div>
+                                            <div
+                                                class="flex items-center ml-3 block truncate dropdown-content w-[calc(100%-1.5rem)]">
+                                                <span class="font-normal block truncate">30 March 2023 - 28 April
+                                                    2023</span>
+                                            </div>
+                                        </div>
+                                    </button>
                                 </div>
+                                <span>
+                                    <button type="button"
+                                        class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
+                                        Submit
+                                    </button>
+                                </span>
                             </div>
-                        </div> -->
-
-
+                        </div>
                         <section aria-labelledby="products-heading" class="pb-24 pt-12">
-                            <h2 id="products-heading" class="sr-only">Products</h2>
-
                             <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                                <!-- Filters -->
-                                <!-- <div class="hidden lg:block">
-                                    <form class="space-y-10 divide-y divide-gray-200 dark:divide-gray-600">
-                                        <div>
-                                            <label for="pharmacy-name"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Pharmacy
-                                                Name</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="email" name="pharmacy-name" id="pharmacy-name"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="patient-name"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Patient
-                                                Name</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="email" name="patient-name" id="patient-name"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="dob"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Date
-                                                of Birth</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" id="date-picker" name="dob" id="dob"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="ndc-dec"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">NDC
-                                                Description</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="ndc-dec" id="ndc-dec"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="dispense"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Dispense</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" id="date-picker" name="dispense" id="dispense"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="written"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Written</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" id="date-picker" name="written" id="written"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="provider"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Provider</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="provider" id="provider"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="npi"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">NPI</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="npi" id="npi"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="rx"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">RX</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="rx" id="rx"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="net-savings" class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Net Savings</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                              <input type="text" name="net-savings" id="net-savings" class="block w-full rounded-md border-0 py-1.5 pr-7 pl-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-                                              <div class="absolute inset-y-0 left-0 flex items-center">
-                                                <label for="symbol" class="sr-only">symbol</label>
-                                                <select id="symbol" name="symbol" class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
-                                                  <option>&gt;</option>
-                                                  <option>&ge;</option>
-                                                  <option>&lt;</option>
-                                                  <option>&le;</option>
-                                                </select>
-                                              </div>
-                                            </div>
-                                        </div>
-
-
-                                    </form>
-                                </div> -->
-
-                                <!-- Product grid -->
                                 <div class="lg:col-span-4">
                                     <div class="px-4 sm:px-6 lg:px-8">
-                                        <div class=" flex items-center flex-wrap justify-between pb-6">
+                                        <div class=" flex items-center flex-wrap justify-between pb-6 gap-2">
                                             <div clss="flex pb-10 items-center justify-between flex-wrap gap-y-2">
                                                 <div class="text-sm">
                                                     <span class="dark:text-white">Showing</span>
-                                                    <span class="font-medium text-indigo-600 dark:text-indigo-500">1</span>
+                                                    <span class="font-medium text-indigo-600 dark:text-indigo-500">1-20</span>
                                                     <span class="dark:text-white">of</span>
-                                                    <span class="text-indigo-600 dark:text-indigo-500 font-medium">1</span>
+                                                    <span class="text-indigo-600 dark:text-indigo-500 font-medium">916</span>
                                                 </div>
                                             </div>
-                                            <div class="flex items-center gap-2 hover:cursor-pointer filter-show">
-                                                <p class="text-sm text-gray-900 dark:text-white">Filters</p>
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    stroke-width="1.5" stroke="currentColor"
-                                                    class="w-4 h-4 dark:text-white">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
-                                                </svg>
+                                            <div class="flex items-center gap-4">
+                                                <div class="relative">
+                                                    <div class="filter-dropdown-btn">
+                                                        <button type="button"
+                                                            class="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
+                                                            aria-haspopup="listbox" aria-expanded="true"
+                                                            aria-labelledby="listbox-label">
+                                                            <span class="truncate">Show: </span>
+                                                            <span class="truncate dropdown-content">
+                                                                <span class="font-normal truncate">10</span>
+                                                            </span>
+                                                            <span
+                                                                class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                                                                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                                                    fill="currentColor" aria-hidden="true">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <ul class="filter-dropdown-list hidden absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-gray-500 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                                                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                                                        aria-activedescendant="listbox-option-3">
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">10</span>
+                                                        </li>
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">25</span>
+                                                        </li>
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">50</span>
+                                                        </li>
+                                                        <li class="text-gray-900 dark:text-white dark:hover:bg-gray-400 relative cursor-default select-none py-2 pl-3 pr-9 hover:cursor-pointer hover:bg-indigo-600 hover:text-white"
+                                                            id="listbox-option-0" role="option">
+                                                            <span class="font-normal truncate">100</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- <div class="flex items-center gap-2 hover:cursor-pointer filter-show">
+                                                    <p class="text-sm text-gray-900 dark:text-white">Filters</p>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                        class="w-4 h-4 dark:text-white">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                                                    </svg>
+                                                </div> -->
+
                                             </div>
 
 
                                         </div>
-                                        <div class="flow-root">
-                                            <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                        <div>
+                                            <div class="mt-8 flow-root">
+                                              <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                                 <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-                                                    <table
-                                                        class="min-w-full divide-y divide-gray-300 dark:divide-gray-600">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col"
-                                                                    class="whitespace-nowrap py-3 pl-4 pr-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400 sm:pl-0">
-                                                                    Id</th>
-                                                                <th scope="col"
-                                                                    class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    NPI</th>
-                                                                <th scope="col"
-                                                                    class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    Doctor Name</th>
-                                                                <th scope="col"
-                                                                    class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    Claim Amount</th>
-                                                                <th scope="col"
-                                                                    class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    Audit</th>
-                                                                <th scope="col"
-                                                                    class="whitespace-nowrap pl-3 py-3 text-right text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                   Action</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody
-                                                            class="divide-y divide-gray-200 dark:divide-gray-600 bg-white dark:bg-gray-700">
-                                                            <tr>
-                                                                <td
-                                                                    class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">1234</a>
-                                                                </td>
-                                                                <td
-                                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    123
-                                                                </td>
-                                                                <td
-                                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    XYX</td>
-                                                                <td
-                                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $432</td>
-                                                                <td
-                                                                    class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    923</td>
-                                                                <td
-                                                                    class="relative whitespace-nowrap py-4 pl-3 text-right text-sm font-medium pr-0">
-                                                                    <a href="#" class="text-indigo-600 dark:text-indigo-500">Delete</a>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
+                                                  <table class="min-w-full">
+                                                    <thead class="bg-white dark:bg-gray-700">
+                                                      <tr>
+                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Patient Name</th>
+                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Status</th>
+                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Provider Name</th>
+                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Provider Npi</th>
+                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Rx-fill</th> 
+                                                        <th scope="col" class="whitespace-nowrap relative py-3.5 pl-3 pr-4 sm:pr-3 text-right text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                            Taxonomy
+                                                        </th>
+                                                      </tr>
+                                                    </thead>
+                                                    <tbody class="bg-white dark:bg-gray-700">
+                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
+                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">Savitz Drug Store</th>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
+                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">Savitz Drug Store</th>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
+                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">Savitz Drug Store</th>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
+                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
+                                                            CRAWLEY, MARVIN</a>
+                                                        </td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
+                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
+                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                            363LF0000X
+                                                        </td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
                                                 </div>
+                                              </div>
                                             </div>
-                                        </div>
+                                          </div>
                                         <nav
                                             class="flex items-center justify-between border-t border-gray-200 dark:border-gray-600 px-4 sm:px-0 my-6">
                                             <div class="-mt-px flex w-0 flex-1">
@@ -812,27 +681,7 @@
                             class="fixed inset-0 overflow-hidden drawer-modal translate-x-full ease-in-out duration-300">
                             <div class="absolute inset-0 overflow-hidden">
                                 <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                                    <!--
-                                Slide-over panel, show/hide based on slide-over state.
-                      
-                                Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-full"
-                                  To: "translate-x-0"
-                                Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-0"
-                                  To: "translate-x-full"
-                              -->
                                     <div class="pointer-events-auto relative w-96">
-                                        <!--
-                                  Close button, show/hide based on slide-over state.
-                      
-                                  Entering: "ease-in-out duration-500"
-                                    From: "opacity-0"
-                                    To: "opacity-100"
-                                  Leaving: "ease-in-out duration-500"
-                                    From: "opacity-100"
-                                    To: "opacity-0"
-                                -->
                                         <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
                                             <button type="button"
                                                 class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
@@ -844,8 +693,6 @@
                                                 </svg>
                                             </button>
                                         </div>
-
-                                        <!-- Slide-over panel, show/hide based on slide-over state. -->
                                         <div class="h-full overflow-y-auto bg-white dark:bg-gray-700 p-8">
                                             <div class="space-y-6 pb-16">
                                                 <div>
@@ -861,50 +708,56 @@
                                                     <dl
                                                         class="mt-2 divide-y divide-gray-200 dark:divide-gray-600 border-b border-t border-gray-200 dark:border-gray-600">
                                                         <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Id</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">1234</dd>
+                                                            <dt class="text-gray-500 dark:text-white">Pharmacy Name</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">Savitz Drug Store</dd>
                                                         </div>
                                                         <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">NPI</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">6366</dd>
+                                                            <dt class="text-gray-500 dark:text-white">Claims</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">#01</dd>
                                                         </div>
                                                         <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Doctor Name</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">XYZ</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Claim Amount</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">7637</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Audit
-                                                            </dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">2988</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">RX</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">6765</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Taxonomy</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">879</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Taxonomy Name</dt>
+                                                            <dt class="text-gray-500 dark:text-white">Patient Name</dt>
                                                             <dd class="text-gray-900 dark:text-gray-400">Susan</dd>
                                                         </div>
                                                         <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Fax</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">908</dd>
+                                                            <dt class="text-gray-500 dark:text-white">Status</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">Qualified</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Provider Name</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">COOPER GILMER, KARA</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">provider NPI
+                                                            </dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">1437387354</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">RX-Fill</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">000006976480-01</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Toxonomy</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">363LF0000X</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Toxonomy description</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">Lorem ipsum dolor...</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">NDC Description</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">CARBIDOPA 25 MG TABLET</dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Claims Details</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">claim_50724
+                                                            </dd>
+                                                        </div>
+                                                        <div class="flex justify-between py-3 text-sm font-medium">
+                                                            <dt class="text-gray-500 dark:text-white">Claims Amount</dt>
+                                                            <dd class="text-gray-900 dark:text-gray-400">$357.49</dd>
                                                         </div>
                                                     </dl>
-                                                </div>
-                                                <div class="flex">
-                                                    <button type="button"
-                                                        class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">Delete</button>
-                                                    <button type="button"
-                                                        class="ml-3 flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">Send to Auditor</button>
-                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -914,7 +767,7 @@
                         </div>
                     </div>
 
-                    <!-- <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
                         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden modal-overlay">
                         </div>
                         <div class="fixed inset-0 z-10 overflow-y-auto invisible modal">
@@ -981,7 +834,7 @@
                                                 Outgoing Notes </dt>
                                             <dd
                                                 class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500">View Note</a>
+                                                <a href="#" class="hover:text-indigo-600">View Note</a>
                                             </dd>
                                         </div>
                                         <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
@@ -995,7 +848,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
 

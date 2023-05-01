@@ -123,11 +123,11 @@
                                                         </li>
                                                         <li>
                                                             <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                                                href="">Not Qualified</a>
+                                                                href="not-qulified-pharmacy.html">Not Qualified</a>
                                                         </li>
                                                         <li>
                                                             <a class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                                                href="">Disqualified</a>
+                                                                href="disqulified-pharmacy.html">Disqualified</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -200,7 +200,7 @@
                         <div class="-mr-2 flex xl:hidden">
                             <!-- Mobile menu button -->
                             <button type="button"
-                                class="mobile-menu-btn inline-flex items-center justify-center rounded-md p-2 bg-white text-gray-700 dark:text-gray-400 dark:bg-gray-800"
+                                class="mobile-menu-btn-show inline-flex items-center justify-center rounded-md p-2 bg-white text-gray-700 dark:text-gray-400 dark:bg-gray-800"
                                 aria-controls="mobile-menu" aria-expanded="false">
                                 <span class="sr-only">Open main menu</span>
                                 <!-- Menu open: "hidden", Menu closed: "block" -->
@@ -221,9 +221,22 @@
             </div>
 
             <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="xl:hidden absolute left-0 bg-white dark:bg-gray-700 w-full z-40">
-                <div class="hidden max-h-72 overflow-y-auto " id="mobile-menu">
-                    <ul class=" space-y-1 px-2 pb-3 pt-2 sm:px-3">
+            <div class="xl:hidden">
+                <div class="fixed inset-0 bg-black bg-opacity-25 mobile-overlay hidden"></div>
+                <div class="translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white dark:bg-gray-800" id="mobile-menu">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                          <span class="sr-only">Your Company</span>
+                          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600" alt="">
+                        </a>
+                        <button type="button" class="mobile-menu-btn-hide -m-2.5 rounded-md p-2.5 text-gray-700">
+                          <span class="sr-only">Close menu</span>
+                          <svg class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                          </svg>
+                        </button>
+                      </div>
+                    <ul class=" space-y-1 pb-3 pt-2">
                         <li class="mobile-nav-link">
                             <a href="dashboard.html"
                                 class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
@@ -298,12 +311,12 @@
                                                 class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Qualified</a>
                                         </li>
                                         <li>
-                                            <a href=""
+                                            <a href="not-qulified-pharmacy.html"
                                                 class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Not
                                                 Qualified</a>
                                         </li>
                                         <li>
-                                            <a href=""
+                                            <a href="disqulified-pharmacy.html"
                                                 class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Disqualified</a>
                                         </li>
                                     </ul>

@@ -8,3 +8,7 @@
 .modal-overlay.overlay-visible {
     display: block;
 }
+html.dark canvas#myChart {
+    filter: invert(100) hue-rotate(180deg);
+}
+

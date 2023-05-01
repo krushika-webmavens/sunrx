@@ -77,9 +77,14 @@ $(document).ready(function ($) {
         $(this).siblings('.mobile-inner-sub-menu').slideToggle();
     })
 
-    $('.mobile-menu-btn').click(function () {
-        $('#mobile-menu').slideToggle();
-    })
+    $('.mobile-menu-btn-show').click(function () {
+        $('#mobile-menu').css({ 'transform': 'translateX(0%)' });
+        $('.mobile-overlay').css({ 'display': 'block' });
+      });
+      $('.mobile-menu-btn-hide').click(function () {
+        $('#mobile-menu').css({ 'transform': 'translateX(100%)' });
+        $('.mobile-overlay').css({ 'display': 'none' });
+      });
 
 
     $('.profile-btn').click(function (e) {
@@ -205,210 +210,22 @@ $(document).ready(function ($) {
       var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
-              labels: ['Sanofi', 'Novartis', 'Eli Lily', 'AbbVie', 'Wintrop', 'Janssen', 'Merck','Wintrop', 'Janssen', 'Merck'],
+              labels: ['Qualified' , 'Not Qualified' , 'Pending'],
               datasets: [{
-                  label: 'AUBURN PHARMACY',
-                  data: [10, 70, 30, 80, 40, 10, 30,40, 10, 30],
+                  label: 'Amount',
+                  data: [70 ,100 , 20],
                   backgroundColor: [
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
+                      'rgba(79 ,70, 229 , 1)',
+                      'rgba(79 ,70, 229 , 1)',
+                      'rgba(79 ,70, 229 , 1)',
                   ],
                   borderColor: [
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
-                      'rgba(42 , 76 ,189 , 1)',
+                      'rgba(79 ,70, 229 , 1)',
+                      'rgba(79 ,70, 229 , 1)',
+                      'rgba(79 ,70, 229 , 1)',
                   ],
                   borderWidth: 1
               },
-              {
-                label: 'AUBURN PHARMACY',
-                data: [100, 60, 70, 85, 50, 90, 40,30, 10, 20],
-                backgroundColor: [
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                ],
-                borderColor: [
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                ],
-                borderWidth: 1
-            },
-            {
-                label: 'AUBURN PHARMACY',
-                data: [20, 10, 50, 80, 60, 80, 40,20, 10, 90],
-                backgroundColor: [
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                ],
-                borderColor: [
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                ],
-                borderWidth: 1
-            },
-              {
-                label: 'AUBURN PHARMACY',
-                data: [10, 70, 30, 80, 40, 10, 30,40, 10, 30],
-                backgroundColor: [
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                ],
-                borderColor: [
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                    'rgba(42 , 76 ,189 , 1)',
-                ],
-                borderWidth: 1
-            },
-              {
-                  label: 'BRIOVARX',
-                  data: [20, 50, 30, 20, 30, 10, 90, 40, 10, 30],
-                  backgroundColor: [
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                  ],
-                  borderColor: [
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                      'rgba(23,102,186,1)',
-                  ],
-                  borderWidth: 1
-              },
-              {
-                  label: 'OPTUM PHARMACY 701',
-                  data: [30, 20, 30, 75, 20, 20, 35, 40, 10, 30],
-                  backgroundColor: [
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                  ],
-                  borderColor: [
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                      'rgba(25,170,221,1)',
-                  ],
-                  borderWidth: 1
-              },
-              {
-                  label: 'OPTUM PHARMACY 705',
-                  data: [50, 90, 50, 55, 20, 35, 10, 40, 10, 30],
-                  backgroundColor: [
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                  ],
-                  borderColor: [
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                      'rgba(26,201,230,1)',
-                  ],
-                  borderWidth: 1
-              }
               ]
           },
           options: {
