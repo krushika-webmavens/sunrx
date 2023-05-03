@@ -23,20 +23,27 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
-                        <div class="flex-shrink-0 flex gap-2">
-                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                alt="Your Company">
-                            <h2 class="text-lg font-bold leading-7 text-gray-900 dark:text-gray-100">
-                                Sunrx
-                            </h2>
+                        <div class="flex-shrink-0 flex gap-2 mr-3">
+                            <a href="/">
+                                <img class="h-6 sm:h-8 w-auto dark:invert" src="assets/images/logo.png"
+                                    alt="Your Company">
+                            </a>
+                        </div>
+                        <div
+                            class="pl-3 relative after:absolute after:content-[''] after:w-px after:h-full after:left-0 after:top-0 after:bg-gray-800 dark:after:bg-gray-400">
+                            <h2 class="font-semibold text-base sm:text-lg dark:text-gray-400">ACC</h2>
                         </div>
                     </div>
                     <div class="hidden xl:block">
                         <div>
-                            <ul class="ml-10 flex items-baseline space-x-4">
+                            <ul class="ml-10 flex items-baseline space-x-2">
                                 <li class="nav-link py-2">
                                     <a href="dashboard.html"
                                         class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="invoice-list.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Invoice</a>
                                 </li>
                                 <li class="nav-link py-2">
                                     <a href="qualified-claims.html"
@@ -139,6 +146,13 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="hidden md:flex items-center">
+                        <div>
+                            <img class="w-10 h-10" src="assets/images/images.png" alt="">
+                        </div>
+                        <p class="text-sm font-medium text-black dark:text-gray-300 ml-3">St. Luke Community Healthcare
+                        </p>
+                    </div>
                     <div class="flex items-center gap-4">
                         <div>
                             <div class="ml-4 flex items-center md:ml-6">
@@ -171,12 +185,6 @@
                                             <img class="h-8 w-8 rounded-full"
                                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                 alt="">
-                                            <div class="ml-3">
-                                                <div
-                                                    class="text-left text-base font-medium leading-none text-black dark:text-white">
-                                                    Tom Cook
-                                                </div>
-                                            </div>
                                         </button>
 
                                     </div>
@@ -187,9 +195,6 @@
                                         <a href="change-password.html"
                                             class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                                             role="menuitem" tabindex="-1" id="user-menu-item-0">Change Password</a>
-                                        <a href="invoice-list.html"
-                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                            role="menuitem" tabindex="-1" id="user-menu-item-1">Invoice List</a>
                                         <a href="#"
                                             class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                                             role="menuitem" tabindex="-1" id="user-menu-item-2">Log Out</a>
@@ -222,24 +227,37 @@
 
             <!-- Mobile menu, show/hide based on menu state. -->
             <div class="xl:hidden">
-                <div class="fixed inset-0 bg-black bg-opacity-25 mobile-overlay hidden"></div>
-                <div class="translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white dark:bg-gray-800" id="mobile-menu">
+                <div class="fixed inset-0 bg-black bg-opacity-25 z-20 mobile-overlay hidden"></div>
+                <div class="translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white dark:bg-gray-800"
+                    id="mobile-menu">
                     <div class="flex items-center justify-between">
                         <a href="#" class="-m-1.5 p-1.5">
-                          <span class="sr-only">Your Company</span>
-                          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600" alt="">
+                            <span class="sr-only">Your Company</span>
+                            <img class="h-8 w-auto dark:invert" src="assets/images/logo.png" alt="">
                         </a>
                         <button type="button" class="mobile-menu-btn-hide -m-2.5 rounded-md p-2.5 text-gray-700">
-                          <span class="sr-only">Close menu</span>
-                          <svg class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                          </svg>
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
                         </button>
-                      </div>
+                    </div>
+                    <div class="flex md:hidden items-center pt-2 justify-between">
+                        <p class="text-base font-medium text-black dark:text-gray-300 ml-3">St. Luke Community
+                            Healthcare</p>
+                        <div>
+                            <img class="w-10 h-10" src="assets/images/images.png" alt="">
+                        </div>
+                    </div>
                     <ul class=" space-y-1 pb-3 pt-2">
                         <li class="mobile-nav-link">
                             <a href="dashboard.html"
                                 class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="invoice-list.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Invoice</a>
                         </li>
                         <li class="mobile-nav-link">
                             <a href="qualified-claims.html"
@@ -331,18 +349,11 @@
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                     alt="">
                             </div>
-                            <div class="ml-3">
-                                <div class="text-base font-medium leading-none text-gray-700 dark:text-white">Tom Cook
-                                </div>
-                            </div>
                         </div>
                         <div class="mt-3 space-y-1 px-2">
                             <a href="change-password.html"
                                 class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Change
                                 Password</a>
-                            <a href="invoice-list.html"
-                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Invoice
-                                List</a>
                             <a href="#"
                                 class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Log
                                 Out</a>
@@ -357,12 +368,12 @@
                     <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div
                             class="md:flex items-baseline justify-between pb-6 pt-16 border-b border-gray-200 dark:border-gray-600">
-                            <h1 class="pb-4 md:pb-0 text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            <h1
+                                class="pb-4 md:pb-0 text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Disualified Pharmacy
                             </h1>
                             <div class="mt-5 flex flex-wrap justify-start gap-4 lg:ml-4 lg:mt-0">
                                 <div>
-                                    <!-- <label for="price" class="block text-sm font-medium leading-6 text-gray-900">Price</label> -->
                                     <button type="button" id="reportrange"
                                         class="relative w-full cursor-default rounded-md bg-white py-1.5 px-3 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
                                         aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
@@ -399,9 +410,11 @@
                                             <div clss="flex pb-10 items-center justify-between flex-wrap gap-y-2">
                                                 <div class="text-sm">
                                                     <span class="dark:text-white">Showing</span>
-                                                    <span class="font-medium text-indigo-600 dark:text-indigo-500">1-20</span>
+                                                    <span
+                                                        class="font-medium text-indigo-600 dark:text-indigo-500">1-20</span>
                                                     <span class="dark:text-white">of</span>
-                                                    <span class="text-indigo-600 dark:text-indigo-500 font-medium">916</span>
+                                                    <span
+                                                        class="text-indigo-600 dark:text-indigo-500 font-medium">916</span>
                                                 </div>
                                             </div>
                                             <div class="flex items-center gap-4">
@@ -463,154 +476,265 @@
                                         </div>
                                         <div>
                                             <div class="mt-8 flow-root">
-                                              <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                                                <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-                                                  <table class="min-w-full">
-                                                    <thead class="bg-white dark:bg-gray-700">
-                                                      <tr>
-                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Patient Name</th>
-                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Status</th>
-                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Provider Name</th>
-                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Provider Npi</th>
-                                                        <th scope="col" class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">Rx-fill</th> 
-                                                        <th scope="col" class="whitespace-nowrap relative py-3.5 pl-3 pr-4 sm:pr-3 text-right text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
-                                                            Taxonomy
-                                                        </th>
-                                                      </tr>
-                                                    </thead>
-                                                    <tbody class="bg-white dark:bg-gray-700">
-                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
-                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">Savitz Drug Store</th>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
-                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">Savitz Drug Store</th>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-200 dark:border-gray-500">
-                                                        <th colspan="6" scope="colgroup" class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">Savitz Drug Store</th>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                      <tr class="border-t border-gray-300 dark:border-gray-500">
-                                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
-                                                            <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500 drawer-show">
-                                                            CRAWLEY, MARVIN</a>
-                                                        </td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">Qualified</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">COOPER GILMER, KARA</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">1437387354	</td>
-                                                        <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400"> 000006976480-01</td>
-                                                        <td class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
-                                                            363LF0000X
-                                                        </td>
-                                                      </tr>
-                                                    </tbody>
-                                                  </table>
+                                                <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                                                    <div
+                                                        class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                                        <table class="min-w-full">
+                                                            <thead class="bg-white dark:bg-gray-700">
+                                                                <tr>
+                                                                    <th scope="col"
+                                                                        class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                                        Patient Name</th>
+                                                                    <th scope="col"
+                                                                        class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                                        Status</th>
+                                                                    <th scope="col"
+                                                                        class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                                        Provider Name</th>
+                                                                    <th scope="col"
+                                                                        class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                                        Provider Npi</th>
+                                                                    <th scope="col"
+                                                                        class="whitespace-nowrap px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                                        Rx-fill</th>
+                                                                    <th scope="col"
+                                                                        class="whitespace-nowrap relative py-3.5 pl-3 pr-4 sm:pr-3 text-right text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase">
+                                                                        Taxonomy
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="bg-white dark:bg-gray-700">
+                                                                <tr
+                                                                    class="border-t border-gray-200 dark:border-gray-500">
+                                                                    <th colspan="6" scope="colgroup"
+                                                                        class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">
+                                                                        Savitz Drug Store</th>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="border-t border-gray-200 dark:border-gray-500">
+                                                                    <th colspan="6" scope="colgroup"
+                                                                        class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">
+                                                                        Savitz Drug Store</th>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="border-t border-gray-200 dark:border-gray-500">
+                                                                    <th colspan="6" scope="colgroup"
+                                                                        class="bg-gray-50 dark:bg-gray-600 py-2 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-3">
+                                                                        Savitz Drug Store</th>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                                <tr
+                                                                    class="drawer-show hover:cursor-pointer border-t border-gray-300 dark:border-gray-500">
+                                                                    <td
+                                                                        class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white  sm:pl-3">
+                                                                            CRAWLEY, MARVIN
+                                                                    </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        Qualified</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        COOPER GILMER, KARA</td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        1437387354 </td>
+                                                                    <td
+                                                                        class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
+                                                                        000006976480-01</td>
+                                                                    <td
+                                                                        class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm text-gray-500 dark:text-gray-400 sm:pr-3">
+                                                                        363LF0000X
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
                                                 </div>
-                                              </div>
                                             </div>
-                                          </div>
+                                        </div>
                                         <nav
                                             class="flex items-center justify-between border-t border-gray-200 dark:border-gray-600 px-4 sm:px-0 my-6">
                                             <div class="-mt-px flex w-0 flex-1">
@@ -628,7 +752,6 @@
                                             <div class="hidden md:-mt-px md:flex">
                                                 <a href="#"
                                                     class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">1</a>
-                                                <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
                                                 <a href="#"
                                                     class="inline-flex items-center border-t-2 border-indigo-500 px-4 pt-4 text-sm font-medium text-indigo-600"
                                                     aria-current="page">2</a>
@@ -664,101 +787,94 @@
 
 
                     <div class="relative z-10" role="dialog" aria-modal="true">
-                        <!--
-                          Background backdrop, show/hide based on slide-over state.
-                      
-                          Entering: "ease-in-out duration-500"
-                            From: "opacity-0"
-                            To: "opacity-100"
-                          Leaving: "ease-in-out duration-500"
-                            From: "opacity-100"
-                            To: "opacity-0"
-                        -->
                         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity drawer-overlay hidden">
                         </div>
 
                         <div
-                            class="fixed inset-0 overflow-hidden drawer-modal translate-x-full ease-in-out duration-300">
-                            <div class="absolute inset-0 overflow-hidden">
-                                <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                                    <div class="pointer-events-auto relative w-96">
-                                        <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
-                                            <button type="button"
-                                                class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
-                                                <span class="sr-only">Close panel</span>
-                                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div class="h-full overflow-y-auto bg-white dark:bg-gray-700 p-8">
-                                            <div class="space-y-6 pb-16">
-                                                <div>
-                                                    <div
-                                                        class="aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg">
-                                                        <img src="https://placehold.co/600x400" alt=""
-                                                            class="object-cover">
+                            class="drawer-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto sm:max-w-sm">
+                            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                                <div class="pointer-events-auto relative w-96">
+                                    <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                                        <button type="button"
+                                            class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+                                            <span class="sr-only">Close panel</span>
+                                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                                stroke="currentColor" aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="h-full overflow-y-auto bg-white dark:bg-gray-700 p-8">
+                                        <div class="space-y-6 pb-16">
+                                            <div>
+                                                <div
+                                                    class="aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg">
+                                                    <img src="https://placehold.co/600x400" alt="" class="object-cover">
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h3 class="font-medium text-gray-900 dark:text-white">Information
+                                                </h3>
+                                                <dl
+                                                    class="mt-2 divide-y divide-gray-200 dark:divide-gray-600 border-b border-t border-gray-200 dark:border-gray-600">
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Pharmacy Name</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">Savitz Drug Store
+                                                        </dd>
                                                     </div>
-                                                </div>
-                                                <div>
-                                                    <h3 class="font-medium text-gray-900 dark:text-white">Information
-                                                    </h3>
-                                                    <dl
-                                                        class="mt-2 divide-y divide-gray-200 dark:divide-gray-600 border-b border-t border-gray-200 dark:border-gray-600">
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Pharmacy Name</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Savitz Drug Store</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Claims</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">#01</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Patient Name</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Susan</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Status</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Qualified</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Provider Name</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">COOPER GILMER, KARA</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">provider NPI
-                                                            </dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">1437387354</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">RX-Fill</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">000006976480-01</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Toxonomy</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">363LF0000X</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Toxonomy description</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Lorem ipsum dolor...</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">NDC Description</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">CARBIDOPA 25 MG TABLET</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Claims Details</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">claim_50724
-                                                            </dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Claims Amount</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">$357.49</dd>
-                                                        </div>
-                                                    </dl>
-                                                </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Claims</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">#01</dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Patient Name</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">Susan</dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Status</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">Qualified</dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Provider Name</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">COOPER GILMER, KARA
+                                                        </dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">provider NPI
+                                                        </dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">1437387354</dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">RX-Fill</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">000006976480-01
+                                                        </dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Toxonomy</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">363LF0000X</dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Toxonomy description
+                                                        </dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">Lorem ipsum
+                                                            dolor...</dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">NDC Description</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">CARBIDOPA 25 MG
+                                                            TABLET</dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Claims Details</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">claim_50724
+                                                        </dd>
+                                                    </div>
+                                                    <div class="flex justify-between py-3 text-sm font-medium">
+                                                        <dt class="text-gray-500 dark:text-white">Claims Amount</dt>
+                                                        <dd class="text-gray-900 dark:text-gray-400">$357.49</dd>
+                                                    </div>
+                                                </dl>
                                             </div>
                                         </div>
                                     </div>

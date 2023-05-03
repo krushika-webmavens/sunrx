@@ -24,11 +24,10 @@
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
                         <div class="flex-shrink-0 flex gap-2">
-                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                alt="Your Company">
-                            <h2 class="text-lg font-bold leading-7 text-gray-900 dark:text-gray-100">
-                                Sunrx
-                            </h2>
+                            <a href="/">
+                                <img class="h-8 w-auto" src="assets/images/logo.png"
+                                    alt="Your Company">
+                                </a>
                         </div>
                     </div>
                     <div class="hidden xl:block">
@@ -358,9 +357,7 @@
 
                         <div class="fixed inset-0 bg-black bg-opacity-25 filter-overlay hidden"></div>
 
-                        <div class="fixed inset-0 z-40 flex filter-modal translate-x-full duration-300">
-                            <div
-                                class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white dark:bg-gray-700 py-4 pb-12 shadow-xl ">
+                        <div class="filter-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 overflow-y-auto py-4 max-w-xs sm:w-80 sm:ring-1 sm:ring-gray-900/10 bg-white dark:bg-gray-700">
                                 <div class="flex items-center justify-between px-4">
                                     <h2 class="text-lg font-medium text-gray-900 dark:text-white">Filters</h2>
                                     <button type="button"
@@ -512,7 +509,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="flex flex-wrap gap-4 fixed right-24 bottom-4">
+                                <div class="flex flex-wrap gap-4 sticky bottom-0 justify-center py-4">
                                     <span>
                                         <button type="button"
                                             class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
@@ -526,9 +523,6 @@
                                         </button>
                                     </span>
                                 </div>
-
-                            </div>
-
                         </div>
                     </div>
 
@@ -624,24 +618,24 @@
                                                                     Patient Name</th>
                                                                 <th scope="col"
                                                                     class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    Ndc Description</th>
+                                                                    Net Entity Saving</th>
                                                                 <th scope="col"
                                                                     class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    Saving</th>
+                                                                    Invoice id</th>
                                                                 <th scope="col"
                                                                     class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
                                                                     Admin Fee</th>
                                                                 <th scope="col"
                                                                     class="whitespace-nowrap pl-3 py-3 text-right text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    invoice id</th>
+                                                                    Saving</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody
                                                             class="divide-y divide-gray-200 dark:divide-gray-600 bg-white dark:bg-gray-700">
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -653,22 +647,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -680,22 +674,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -707,22 +701,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -734,22 +728,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -761,22 +755,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -788,22 +782,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -815,22 +809,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -842,22 +836,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -869,22 +863,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -896,22 +890,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -923,22 +917,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -950,22 +944,22 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">747827</a>
+                                                                    747827
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -977,16 +971,16 @@
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    TRESIBA FLEXTOUCH 100 UNIT/ML </td>
+                                                                    $121</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    $322</td>
+                                                                    111</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
                                                                     $2342</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400 text-right">
-                                                                    2124
+                                                                    $322
                                                                 </td>
                                                             </tr>
 
@@ -1048,45 +1042,14 @@
 
 
                     <div class="relative z-10" role="dialog" aria-modal="true">
-                        <!--
-                          Background backdrop, show/hide based on slide-over state.
-                      
-                          Entering: "ease-in-out duration-500"
-                            From: "opacity-0"
-                            To: "opacity-100"
-                          Leaving: "ease-in-out duration-500"
-                            From: "opacity-100"
-                            To: "opacity-0"
-                        -->
                         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity drawer-overlay hidden">
                         </div>
 
                         <div
-                            class="fixed inset-0 overflow-hidden drawer-modal translate-x-full ease-in-out duration-300">
-                            <div class="absolute inset-0 overflow-hidden">
+                            class="drawer-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto sm:max-w-sm">
                                 <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                                    <!--
-                                Slide-over panel, show/hide based on slide-over state.
-                      
-                                Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-full"
-                                  To: "translate-x-0"
-                                Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-0"
-                                  To: "translate-x-full"
-                              -->
                                     <div class="pointer-events-auto relative w-96">
-                                        <!--
-                                  Close button, show/hide based on slide-over state.
-                      
-                                  Entering: "ease-in-out duration-500"
-                                    From: "opacity-0"
-                                    To: "opacity-100"
-                                  Leaving: "ease-in-out duration-500"
-                                    From: "opacity-100"
-                                    To: "opacity-0"
-                                -->
-                                        <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                                         <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
                                             <button type="button"
                                                 class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                                                 <span class="sr-only">Close panel</span>
@@ -1191,7 +1154,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                             </div>
                         </div>
                     </div>

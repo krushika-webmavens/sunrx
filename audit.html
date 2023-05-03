@@ -23,20 +23,27 @@
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div class="flex h-16 items-center justify-between">
                     <div class="flex items-center">
-                        <div class="flex-shrink-0 flex gap-2">
-                            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                alt="Your Company">
-                            <h2 class="text-lg font-bold leading-7 text-gray-900 dark:text-gray-100">
-                                Sunrx
-                            </h2>
+                        <div class="flex-shrink-0 flex gap-2 mr-3">
+                            <a href="/">
+                                <img class="h-6 sm:h-8 w-auto dark:invert" src="assets/images/logo.png"
+                                    alt="Your Company">
+                            </a>
+                        </div>
+                        <div
+                            class="pl-3 relative after:absolute after:content-[''] after:w-px after:h-full after:left-0 after:top-0 after:bg-gray-800 dark:after:bg-gray-400">
+                            <h2 class="font-semibold text-base sm:text-lg dark:text-gray-400">ACC</h2>
                         </div>
                     </div>
                     <div class="hidden xl:block">
                         <div>
-                            <ul class="ml-10 flex items-baseline space-x-4">
+                            <ul class="ml-10 flex items-baseline space-x-2">
                                 <li class="nav-link py-2">
                                     <a href="dashboard.html"
                                         class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
+                                </li>
+                                <li class="nav-link py-2">
+                                    <a href="invoice-list.html"
+                                        class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white rounded-md px-3 py-2 text-sm font-medium">Invoice</a>
                                 </li>
                                 <li class="nav-link py-2">
                                     <a href="qualified-claims.html"
@@ -139,6 +146,13 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="hidden md:flex items-center">
+                        <div>
+                            <img class="w-10 h-10" src="assets/images/images.png" alt="">
+                        </div>
+                        <p class="text-sm font-medium text-black dark:text-gray-300 ml-3">St. Luke Community Healthcare
+                        </p>
+                    </div>
                     <div class="flex items-center gap-4">
                         <div>
                             <div class="ml-4 flex items-center md:ml-6">
@@ -171,12 +185,6 @@
                                             <img class="h-8 w-8 rounded-full"
                                                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                                 alt="">
-                                            <div class="ml-3">
-                                                <div
-                                                    class="text-left text-base font-medium leading-none text-black dark:text-white">
-                                                    Tom Cook
-                                                </div>
-                                            </div>
                                         </button>
 
                                     </div>
@@ -187,9 +195,6 @@
                                         <a href="change-password.html"
                                             class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                                             role="menuitem" tabindex="-1" id="user-menu-item-0">Change Password</a>
-                                        <a href="invoice-list.html"
-                                            class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                            role="menuitem" tabindex="-1" id="user-menu-item-1">Invoice List</a>
                                         <a href="#"
                                             class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
                                             role="menuitem" tabindex="-1" id="user-menu-item-2">Log Out</a>
@@ -222,24 +227,37 @@
 
             <!-- Mobile menu, show/hide based on menu state. -->
             <div class="xl:hidden">
-                <div class="fixed inset-0 bg-black bg-opacity-25 mobile-overlay hidden"></div>
-                <div class="translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-10 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white dark:bg-gray-800" id="mobile-menu">
+                <div class="fixed inset-0 bg-black bg-opacity-25 z-20 mobile-overlay hidden"></div>
+                <div class="translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white dark:bg-gray-800"
+                    id="mobile-menu">
                     <div class="flex items-center justify-between">
                         <a href="#" class="-m-1.5 p-1.5">
-                          <span class="sr-only">Your Company</span>
-                          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&amp;shade=600" alt="">
+                            <span class="sr-only">Your Company</span>
+                            <img class="h-8 w-auto dark:invert" src="assets/images/logo.png" alt="">
                         </a>
                         <button type="button" class="mobile-menu-btn-hide -m-2.5 rounded-md p-2.5 text-gray-700">
-                          <span class="sr-only">Close menu</span>
-                          <svg class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                          </svg>
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6 dark:text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
                         </button>
-                      </div>
+                    </div>
+                    <div class="flex md:hidden items-center pt-2 justify-between">
+                        <p class="text-base font-medium text-black dark:text-gray-300 ml-3">St. Luke Community
+                            Healthcare</p>
+                        <div>
+                            <img class="w-10 h-10" src="assets/images/images.png" alt="">
+                        </div>
+                    </div>
                     <ul class=" space-y-1 pb-3 pt-2">
                         <li class="mobile-nav-link">
                             <a href="dashboard.html"
                                 class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Dashboard</a>
+                        </li>
+                        <li class="mobile-nav-link">
+                            <a href="invoice-list.html"
+                                class="text-black dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block rounded-md px-3 py-2 text-base font-medium">Invoice</a>
                         </li>
                         <li class="mobile-nav-link">
                             <a href="qualified-claims.html"
@@ -331,18 +349,11 @@
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                     alt="">
                             </div>
-                            <div class="ml-3">
-                                <div class="text-base font-medium leading-none text-gray-700 dark:text-white">Tom Cook
-                                </div>
-                            </div>
                         </div>
                         <div class="mt-3 space-y-1 px-2">
                             <a href="change-password.html"
                                 class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Change
                                 Password</a>
-                            <a href="invoice-list.html"
-                                class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Invoice
-                                List</a>
                             <a href="#"
                                 class="block rounded-md px-3 py-2 text-base font-medium text-black dark:text-gray-400 hover:bg-gray-700 hover:text-white">Log
                                 Out</a>
@@ -358,9 +369,7 @@
 
                         <div class="fixed inset-0 bg-black bg-opacity-25 filter-overlay hidden"></div>
 
-                        <div class="fixed inset-0 z-40 flex filter-modal translate-x-full duration-300">
-                            <div
-                                class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white dark:bg-gray-700 py-4 pb-12 shadow-xl ">
+                        <div class="filter-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 overflow-y-auto py-4 max-w-xs sm:w-80 sm:ring-1 sm:ring-gray-900/10 bg-white dark:bg-gray-700">
                                 <div class="flex items-center justify-between px-4">
                                     <h2 class="text-lg font-medium text-gray-900 dark:text-white">Filters</h2>
                                     <button type="button"
@@ -386,20 +395,17 @@
                                                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                             </div>
                                             <input type="text" name="npi" id="npi"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
                                                 placeholder="NPI">
                                         </div>
                                     </div>
                                     <div class="border-t border-gray-200 dark:border-gray-600 px-4 py-6">
-                                        <!-- <label for="patient-name"
-                                            class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Patient
-                                            Name</label> -->
                                         <div class="relative mt-2 rounded-md shadow-sm">
                                             <div
                                                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                             </div>
                                             <input type="text" name="doctor-name" id="doctor-name"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
                                                 placeholder="Doctor Name">
                                         </div>
                                     </div>
@@ -409,7 +415,7 @@
                                             Savings</label> -->
                                         <div class="relative mt-2 rounded-md shadow-sm">
                                             <input type="text" name="net-savings" id="net-savings"
-                                                class="block w-full rounded-md border-0 py-1.5 pr-7 pl-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
+                                                class="block w-full rounded-md border-0 py-1.5 pr-7 pl-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
                                                 placeholder="Claim Amount">
                                             <div class="absolute inset-y-0 left-0 flex items-center">
                                                 <label for="symbol" class="sr-only">symbol</label>
@@ -432,7 +438,7 @@
                                                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                             </div>
                                             <input type="text" name="taxonomy" id="taxonomy"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
                                                 placeholder="Taxonomy">
                                         </div>
                                     </div>
@@ -445,7 +451,7 @@
                                                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                             </div>
                                             <input type="text" name="taxonomy-name" id="taxonomy-name"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
                                                 placeholder="Taxonomy Name">
                                         </div>
                                     </div>
@@ -457,12 +463,12 @@
                                                 class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                             </div>
                                             <input type="text" name="Fax" id="Fax"
-                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
+                                                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200"
                                                 placeholder="Fax">
                                         </div>
                                     </div>
                                 </form>
-                                <div class="flex flex-wrap gap-4 fixed right-24 bottom-4">
+                                <div class="flex flex-wrap gap-4 sticky bottom-0 justify-center py-4">
                                     <span>
                                         <button type="button"
                                             class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">
@@ -478,8 +484,6 @@
                                 </div>
 
                             </div>
-
-                        </div>
                     </div>
 
                     <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
@@ -547,7 +551,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="email" name="pharmacy-name" id="pharmacy-name"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -559,7 +563,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="email" name="patient-name" id="patient-name"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -571,7 +575,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="text" id="date-picker" name="dob" id="dob"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -583,7 +587,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="text" name="ndc-dec" id="ndc-dec"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -594,7 +598,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="text" id="date-picker" name="dispense" id="dispense"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -605,7 +609,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="text" id="date-picker" name="written" id="written"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -616,7 +620,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="text" name="provider" id="provider"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -627,7 +631,7 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="text" name="npi" id="npi"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
@@ -638,13 +642,13 @@
                                                     class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
                                                 </div>
                                                 <input type="text" name="rx" id="rx"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
+                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
                                             </div>
                                         </div>
                                         <div class="pt-10">
                                             <label for="net-savings" class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Net Savings</label>
                                             <div class="relative mt-2 rounded-md shadow-sm">
-                                              <input type="text" name="net-savings" id="net-savings" class="block w-full rounded-md border-0 py-1.5 pr-7 pl-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                              <input type="text" name="net-savings" id="net-savings" class="block w-full rounded-md border-0 py-1.5 pr-7 pl-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6">
                                               <div class="absolute inset-y-0 left-0 flex items-center">
                                                 <label for="symbol" class="sr-only">symbol</label>
                                                 <select id="symbol" name="symbol" class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
@@ -706,18 +710,18 @@
                                                                     Claim Amount</th>
                                                                 <th scope="col"
                                                                     class="whitespace-nowrap px-3 py-3 text-left text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                    Audit</th>
+                                                                    RX</th>
                                                                 <th scope="col"
                                                                     class="whitespace-nowrap pl-3 py-3 text-right text-xs font-medium tracking-wide uppercase text-gray-500 dark:text-gray-400">
-                                                                   Action</th>
+                                                                   Audit</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody
                                                             class="divide-y divide-gray-200 dark:divide-gray-600 bg-white dark:bg-gray-700">
-                                                            <tr>
+                                                            <tr class="drawer-show hover:cursor-pointer">
                                                                 <td
                                                                     class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 dark:text-white sm:pl-0">
-                                                                    <a href="#" class="drawer-show hover:text-indigo-600 dark:hover:text-indigo-500">1234</a>
+                                                                    1234
                                                                 </td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
@@ -731,10 +735,10 @@
                                                                     $432</td>
                                                                 <td
                                                                     class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                                                    923</td>
+                                                                    6765</td>
                                                                 <td
-                                                                    class="relative whitespace-nowrap py-4 pl-3 text-right text-sm font-medium pr-0">
-                                                                    <a href="#" class="text-indigo-600 dark:text-indigo-500">Delete</a>
+                                                                    class="relative whitespace-nowrap py-4 pl-3 text-right text-sm pr-0 text-gray-500 dark:text-gray-400">
+                                                                    2988
                                                                 </td>
                                                             </tr>
                                                         </tbody>
@@ -759,7 +763,6 @@
                                             <div class="hidden md:-mt-px md:flex">
                                                 <a href="#"
                                                     class="inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 dark:text-white hover:border-gray-300 hover:text-gray-700">1</a>
-                                                <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
                                                 <a href="#"
                                                     class="inline-flex items-center border-t-2 border-indigo-500 px-4 pt-4 text-sm font-medium text-indigo-600"
                                                     aria-current="page">2</a>
@@ -795,45 +798,14 @@
 
 
                     <div class="relative z-10" role="dialog" aria-modal="true">
-                        <!--
-                          Background backdrop, show/hide based on slide-over state.
-                      
-                          Entering: "ease-in-out duration-500"
-                            From: "opacity-0"
-                            To: "opacity-100"
-                          Leaving: "ease-in-out duration-500"
-                            From: "opacity-100"
-                            To: "opacity-0"
-                        -->
                         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity drawer-overlay hidden">
                         </div>
 
                         <div
-                            class="fixed inset-0 overflow-hidden drawer-modal translate-x-full ease-in-out duration-300">
-                            <div class="absolute inset-0 overflow-hidden">
+                            class="drawer-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto sm:max-w-sm">
                                 <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                                    <!--
-                                Slide-over panel, show/hide based on slide-over state.
-                      
-                                Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-full"
-                                  To: "translate-x-0"
-                                Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-0"
-                                  To: "translate-x-full"
-                              -->
                                     <div class="pointer-events-auto relative w-96">
-                                        <!--
-                                  Close button, show/hide based on slide-over state.
-                      
-                                  Entering: "ease-in-out duration-500"
-                                    From: "opacity-0"
-                                    To: "opacity-100"
-                                  Leaving: "ease-in-out duration-500"
-                                    From: "opacity-100"
-                                    To: "opacity-0"
-                                -->
-                                        <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
+                                          <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
                                             <button type="button"
                                                 class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                                                 <span class="sr-only">Close panel</span>
@@ -910,92 +882,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden modal-overlay">
-                        </div>
-                        <div class="fixed inset-0 z-10 overflow-y-auto invisible modal">
-                            <div
-                                class="bg-white dark:bg-gray-700 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 w-full sm:w-1/2 mx-auto">
-                                <div class="px-4 sm:px-0 flex justify-between items-center">
-                                    <h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Patient
-                                        Details</h3>
-                                    <span class="modal-toogle hover:cursor-pointer dark:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-
-                                    </span>
-                                </div>
-                                <div class="mt-6 border-t border-gray-100 dark:border-gray-600">
-                                    <dl class="divide-y divide-gray-100 dark:divide-gray-600">
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Full
-                                                name</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                Margot Foster</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Third Party Payment </dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $845.18</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Patient Copay</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $70</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Cost
-                                                Of Goods</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $5.99267</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Pharmacy Dispense</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $366.07</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Invoice Link</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                No Invoice Found</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Outgoing Notes </dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500">View Note</a>
-                                            </dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Incoming Notes</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                No Notes Found</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 

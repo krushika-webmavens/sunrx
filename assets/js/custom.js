@@ -85,6 +85,10 @@ $(document).ready(function ($) {
         $('#mobile-menu').css({ 'transform': 'translateX(100%)' });
         $('.mobile-overlay').css({ 'display': 'none' });
       });
+      $('.mobile-overlay').click(function () {
+        $('#mobile-menu').css({ 'transform': 'translateX(100%)' });
+        $(this).css({ 'display': 'none' });
+      });
 
 
     $('.profile-btn').click(function (e) {
@@ -152,11 +156,11 @@ $(document).ready(function ($) {
 
 
 
-    $('.modal-toogle').on('click', function (e) {
-        e.preventDefault();
-        $('.modal-overlay').toggleClass('overlay-visible');
-        $('.modal').toggleClass('is-visible');;
-      });
+    // $('.modal-toogle').on('click', function (e) {
+    //     e.preventDefault();
+    //     $('.modal-overlay').toggleClass('overlay-visible');
+    //     $('.modal').toggleClass('is-visible');;
+    //   });
 
 
       $('.drawer-show').click(function () {
@@ -167,6 +171,10 @@ $(document).ready(function ($) {
         $('.drawer-modal').removeClass('drawer-modal-open').css({ 'transform': 'translateX(100%)' });
         $('.drawer-overlay').css({ 'display': 'none' });
       });
+      $('.drawer-overlay').click(function () {
+        $('.drawer-modal').removeClass('drawer-modal-open').css({ 'transform': 'translateX(100%)' });
+        $(this).css({ 'display': 'none' });
+      });
 
       $('.filter-show').click(function () {
         $('.filter-modal').addClass('filter-modal-open').css({ 'transform': 'translateX(0%)' });
@@ -175,6 +183,10 @@ $(document).ready(function ($) {
       $('.filter-hide').click(function () {
         $('.filter-modal').removeClass('filter-modal-open').css({ 'transform': 'translateX(100%)' });
         $('.filter-overlay').css({ 'display': 'none' });
+      });
+      $('.filter-overlay').click(function () {
+        $('.filter-modal').removeClass('filter-modal-open').css({ 'transform': 'translateX(100%)' });
+        $(this).css({ 'display': 'none' });
       });
 
 
