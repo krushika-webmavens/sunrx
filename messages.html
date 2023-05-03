@@ -617,44 +617,13 @@
 
 
                     <div class="relative z-10" role="dialog" aria-modal="true">
-                        <!--
-                          Background backdrop, show/hide based on slide-over state.
-                      
-                          Entering: "ease-in-out duration-500"
-                            From: "opacity-0"
-                            To: "opacity-100"
-                          Leaving: "ease-in-out duration-500"
-                            From: "opacity-100"
-                            To: "opacity-0"
-                        -->
                         <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity drawer-overlay hidden">
                         </div>
 
                         <div
-                            class="fixed inset-0 overflow-hidden drawer-modal translate-x-full ease-in-out duration-300">
-                            <div class="absolute inset-0 overflow-hidden">
+                            class="drawer-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto sm:max-w-sm">
                                 <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                                    <!--
-                                Slide-over panel, show/hide based on slide-over state.
-                      
-                                Entering: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-full"
-                                  To: "translate-x-0"
-                                Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
-                                  From: "translate-x-0"
-                                  To: "translate-x-full"
-                              -->
                                     <div class="pointer-events-auto relative w-96">
-                                        <!--
-                                  Close button, show/hide based on slide-over state.
-                      
-                                  Entering: "ease-in-out duration-500"
-                                    From: "opacity-0"
-                                    To: "opacity-100"
-                                  Leaving: "ease-in-out duration-500"
-                                    From: "opacity-100"
-                                    To: "opacity-0"
-                                -->
                                         <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
                                             <button type="button"
                                                 class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
@@ -730,100 +699,16 @@
                                                 <div class="flex">
                                                     <button type="button"
                                                         class="flex w-full justify-center rounded-md bg-indigo-600 dark:bg-indigo-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:focus-visible:outline-indigo-500">Delete</button>
-                                                    <!-- <button type="button"
-                                                        class="ml-3 flex-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Send to Auditor</button> -->
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
 
-                    <!-- <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden modal-overlay">
-                        </div>
-                        <div class="fixed inset-0 z-10 overflow-y-auto invisible modal">
-                            <div
-                                class="bg-white dark:bg-gray-700 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 w-full sm:w-1/2 mx-auto">
-                                <div class="px-4 sm:px-0 flex justify-between items-center">
-                                    <h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Patient
-                                        Details</h3>
-                                    <span class="modal-toogle hover:cursor-pointer dark:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-
-                                    </span>
-                                </div>
-                                <div class="mt-6 border-t border-gray-100 dark:border-gray-600">
-                                    <dl class="divide-y divide-gray-100 dark:divide-gray-600">
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Full
-                                                name</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                Margot Foster</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Third Party Payment </dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $845.18</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Patient Copay</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $70</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Cost
-                                                Of Goods</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $5.99267</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Pharmacy Dispense</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $366.07</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Invoice Link</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                No Invoice Found</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Outgoing Notes </dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                <a href="#" class="hover:text-indigo-600 dark:hover:text-indigo-500">View Note</a>
-                                            </dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Incoming Notes</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                No Notes Found</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                   
                 </div>
             </div>
 

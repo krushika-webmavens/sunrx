@@ -80,15 +80,15 @@ $(document).ready(function ($) {
     $('.mobile-menu-btn-show').click(function () {
         $('#mobile-menu').css({ 'transform': 'translateX(0%)' });
         $('.mobile-overlay').css({ 'display': 'block' });
-      });
-      $('.mobile-menu-btn-hide').click(function () {
+    });
+    $('.mobile-menu-btn-hide').click(function () {
         $('#mobile-menu').css({ 'transform': 'translateX(100%)' });
         $('.mobile-overlay').css({ 'display': 'none' });
-      });
-      $('.mobile-overlay').click(function () {
+    });
+    $('.mobile-overlay').click(function () {
         $('#mobile-menu').css({ 'transform': 'translateX(100%)' });
         $(this).css({ 'display': 'none' });
-      });
+    });
 
 
     $('.profile-btn').click(function (e) {
@@ -121,15 +121,15 @@ $(document).ready(function ($) {
 
     });
 
-    $(function() {
+    $(function () {
         $('input[id="date-picker"]').daterangepicker({
-          singleDatePicker: true,
-          showDropdowns: true,
-          maxYear: parseInt(moment().format('YYYY'),10)
-        }, function(start, end, label) {
-          var years = moment().diff(start, 'years');
+            singleDatePicker: true,
+            showDropdowns: true,
+            maxYear: parseInt(moment().format('YYYY'), 10)
+        }, function (start, end, label) {
+            var years = moment().diff(start, 'years');
         });
-      });
+    });
 
 
 
@@ -155,49 +155,41 @@ $(document).ready(function ($) {
     });
 
 
-
-    // $('.modal-toogle').on('click', function (e) {
-    //     e.preventDefault();
-    //     $('.modal-overlay').toggleClass('overlay-visible');
-    //     $('.modal').toggleClass('is-visible');;
-    //   });
-
-
-      $('.drawer-show').click(function () {
+    $('.drawer-show').click(function () {
         $('.drawer-modal').addClass('drawer-modal-open').css({ 'transform': 'translateX(0%)' });
         $('.drawer-overlay').css({ 'display': 'block' });
-      });
-      $('.drawer-hide').click(function () {
+    });
+    $('.drawer-hide').click(function () {
         $('.drawer-modal').removeClass('drawer-modal-open').css({ 'transform': 'translateX(100%)' });
         $('.drawer-overlay').css({ 'display': 'none' });
-      });
-      $('.drawer-overlay').click(function () {
+    });
+    $('.drawer-overlay').click(function () {
         $('.drawer-modal').removeClass('drawer-modal-open').css({ 'transform': 'translateX(100%)' });
         $(this).css({ 'display': 'none' });
-      });
+    });
 
-      $('.filter-show').click(function () {
+    $('.filter-show').click(function () {
         $('.filter-modal').addClass('filter-modal-open').css({ 'transform': 'translateX(0%)' });
         $('.filter-overlay').css({ 'display': 'block' });
-      });
-      $('.filter-hide').click(function () {
+    });
+    $('.filter-hide').click(function () {
         $('.filter-modal').removeClass('filter-modal-open').css({ 'transform': 'translateX(100%)' });
         $('.filter-overlay').css({ 'display': 'none' });
-      });
-      $('.filter-overlay').click(function () {
+    });
+    $('.filter-overlay').click(function () {
         $('.filter-modal').removeClass('filter-modal-open').css({ 'transform': 'translateX(100%)' });
         $(this).css({ 'display': 'none' });
-      });
+    });
 
 
 
 
-      $('.filter-dropdown-btn').click(function () {
+    $('.filter-dropdown-btn').click(function () {
         $('.filter-dropdown-list').hide();
         $(this).siblings('.filter-dropdown-list').toggle();
-      });
-    
-      $('.filter-dropdown-list li').on('click', function (e) {
+    });
+
+    $('.filter-dropdown-list li').on('click', function (e) {
         e.preventDefault();
         $(".filter-dropdown-list li").removeClass("select");
         $(this).closest('li').addClass('select');
@@ -205,47 +197,207 @@ $(document).ready(function ($) {
         console.log(first_val);
         $(this).parent('.filter-dropdown-list').siblings('.filter-dropdown-btn').children('button').children('.dropdown-content').html(first_val)
         $('.filter-dropdown-list').toggle();
-      });
-      $(document).on("click", function (event) {
+    });
+    $(document).on("click", function (event) {
         var $trigger = $(".filter-dropdown-btn");
         if ($trigger !== event.target && !$trigger.has(event.target).length) {
-          $(".filter-dropdown-list").hide();
+            $(".filter-dropdown-list").hide();
         }
-      });
+    });
 
 
-      //chart
+    //chart
 
 
 
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-              labels: ['Qualified' , 'Not Qualified' , 'Pending'],
-              datasets: [{
-                  label: 'Amount',
-                  data: [70 ,100 , 20],
-                  backgroundColor: [
-                      'rgba(79 ,70, 229 , 1)',
-                      'rgba(79 ,70, 229 , 1)',
-                      'rgba(79 ,70, 229 , 1)',
-                  ],
-                  borderColor: [
-                      'rgba(79 ,70, 229 , 1)',
-                      'rgba(79 ,70, 229 , 1)',
-                      'rgba(79 ,70, 229 , 1)',
-                  ],
-                  borderWidth: 1
-              },
-              ]
-          },
-          options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              legend: {
-                  display: true
-              },
-          }
-      });
+    //   var ctx = document.getElementById("myChart");
+    //   var myChart = new Chart(ctx, {
+    //       type: 'pie',
+    //       data: {
+    //           labels: ['Qualified' , 'Not Qualified' , 'Pending'],
+    //           datasets: [{
+    //               label: 'Amount',
+    //               claims : ['#13' , '#23' , '#21'],
+    //               data: [70 ,10 , 20],
+    //               backgroundColor: [
+    //                 'rgb(255, 99, 132)',
+    //                 'rgb(54, 162, 235)',
+    //                 'rgb(255, 205, 86)'
+    //               ],
+    //               borderColor: [
+    //                 'rgb(255, 99, 132)',
+    //                 'rgb(54, 162, 235)',
+    //                 'rgb(255, 205, 86)'
+    //               ],
+    //               borderWidth: 1
+    //           },
+    //           ]
+    //       },
+    //       options: {
+    //           responsive: true,
+    //           maintainAspectRatio: false,
+    //           legend: {
+    //               display: true
+    //           },
+    //       }
+    //   });
+
+
+    const data = {
+        labels: ['Qualified', 'Not Qualified', 'Pending'],
+        datasets: [{
+            label: 'Amount',
+            claims: ['#13', '#23', '#21'],
+            data: [70, 10, 20],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            borderWidth: 1
+        },
+        ]
+    }
+    const config = {
+        type: 'pie',
+        data, 
+        options: {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: context => {
+                            console.log(context);
+                            const datasetIndex = context.datasetIndex;
+                            const dataPoint = context.dataIndex;
+                            return `${context.label}: ${context.dataset.data[dataPoint]} , claims: ${
+                                context.dataset.claims[dataPoint]
+                            }`;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    const myChart = new Chart(
+        document.getElementById("myChart"),
+        config,
+    );
+
+
+    var ctx = document.getElementById("qualified-provider-chart");
+    var qualified_provider_chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['DANICICH, MICHELE', 'DANICICH, MICHELE', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'DANICICH, MICHELE'],
+            datasets: [{
+                label: 'Amount',
+                data: [70, 10, 20, 100, 120, 40],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                borderWidth: 1
+            },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: true
+            },
+        }
+    });
+
+    var ctx = document.getElementById("myChart3");
+    var myChart3 = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY'],
+            datasets: [{
+                label: 'Amount',
+                data: [70, 10, 20, 100, 80, 34, 16, 89, 24],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 99, 132)',
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 205, 86)',
+                    'rgb(255, 99, 132)',
+                ],
+                borderWidth: 1
+            },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: true
+            },
+        }
+    });
+    var ctx = document.getElementById("bin-chart");
+    var bin_chart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['BIN', 'PCN', 'Group'],
+            datasets: [{
+                label: 'Amount',
+                data: [70, 10, 20],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                borderWidth: 1
+            },
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: {
+                display: true
+            },
+        }
+    });
 })
