@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit - Sunrx</title>
+    <title>Audit - SunRx</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -487,8 +487,8 @@
                     </div>
 
                     <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
-                        <div class="md:flex items-baseline justify-between pb-6 pt-16 border-b border-gray-200 dark:border-gray-600">
-                            <h1 class="pb-4 md:pb-0 text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <div class="flex items-center justify-between flex-wrap gap-y-4 gap-x-6 pb-6 pt-16 border-b border-gray-200 dark:border-gray-600">
+                            <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 Audit
                             </h1>
 
@@ -508,163 +508,10 @@
                             </div> -->
                         </div>
 
-                        <!-- <div class="border-b border-gray-200 dark:border-gray-600 pb-6 dark:bg-gray-700">
-                            <div class="mx-auto max-w-7xl">
-                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                                    <div
-                                        class="bg-white dark:bg-gray-600 px-4 py-6 sm:px-6 lg:px-8 border border-gray-200 dark:border-gray-600 rounded-lg">
-                                        <p class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Total
-                                            Net Savings</p>
-                                        <p class="mt-2 flex items-baseline gap-x-2">
-                                            <span
-                                                class="text-3xl font-semibold tracking-tight text-indigo-600 dark:text-white">$451539.71</span>
-                                        </p>
-                                    </div>
-                                    <div
-                                        class="bg-white dark:bg-gray-600 px-4 py-6 sm:px-6 lg:px-8 border border-gray-200 dark:border-gray-600 rounded-lg">
-                                        <p class="text-sm font-medium leading-6 text-gray-900 dark:text-gray-400">Net
-                                            Entity
-                                            Savings</p>
-                                        <p class="mt-2 flex items-baseline gap-x-2">
-                                            <span
-                                                class="text-3xl font-semibold tracking-tight text-indigo-600 dark:text-white">$451539.71</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-
                         <section aria-labelledby="products-heading" class="pb-24 pt-12">
                             <h2 id="products-heading" class="sr-only">Products</h2>
 
                             <div class="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-4">
-                                <!-- Filters -->
-                                <!-- <div class="hidden lg:block">
-                                    <form class="space-y-10 divide-y divide-gray-200 dark:divide-gray-600">
-                                        <div>
-                                            <label for="pharmacy-name"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Pharmacy
-                                                Name</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="email" name="pharmacy-name" id="pharmacy-name"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="patient-name"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Patient
-                                                Name</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="email" name="patient-name" id="patient-name"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="dob"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Date
-                                                of Birth</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" id="date-picker" name="dob" id="dob"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="ndc-dec"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">NDC
-                                                Description</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="ndc-dec" id="ndc-dec"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="dispense"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Dispense</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" id="date-picker" name="dispense" id="dispense"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="written"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Written</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" id="date-picker" name="written" id="written"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="provider"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Provider</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="provider" id="provider"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="npi"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">NPI</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="npi" id="npi"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="rx"
-                                                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">RX</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                                <div
-                                                    class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                                </div>
-                                                <input type="text" name="rx" id="rx"
-                                                    class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6 dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500 dark:placeholder:text-gray-200">
-                                            </div>
-                                        </div>
-                                        <div class="pt-10">
-                                            <label for="net-savings" class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">Net Savings</label>
-                                            <div class="relative mt-2 rounded-md shadow-sm">
-                                              <input type="text" name="net-savings" id="net-savings" class="block w-full rounded-md border-0 py-1.5 pr-7 pl-14 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm leading-6">
-                                              <div class="absolute inset-y-0 left-0 flex items-center">
-                                                <label for="symbol" class="sr-only">symbol</label>
-                                                <select id="symbol" name="symbol" class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
-                                                  <option>&gt;</option>
-                                                  <option>&ge;</option>
-                                                  <option>&lt;</option>
-                                                  <option>&le;</option>
-                                                </select>
-                                              </div>
-                                            </div>
-                                        </div>
-
-
-                                    </form>
-                                </div> -->
-
                                 <!-- Product grid -->
                                 <div class="lg:col-span-4">
                                     <div class="px-4 sm:px-6 lg:px-8">
@@ -802,7 +649,7 @@
                         </div>
 
                         <div
-                            class="drawer-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto sm:max-w-sm">
+                            class="drawer-modal translate-x-full duration-300 overflow-y-auto fixed inset-y-0 right-0 z-30 w-full overflow-y-auto max-w-sm">
                                 <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
                                     <div class="pointer-events-auto relative w-96">
                                           <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">

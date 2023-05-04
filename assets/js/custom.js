@@ -242,134 +242,53 @@ $(document).ready(function ($) {
     //       }
     //   });
 
-
-    const data = {
-        labels: ['Qualified', 'Not Qualified', 'Pending'],
-        datasets: [{
-            label: 'Amount',
-            claims: ['#13', '#23', '#21'],
-            data: [70, 10, 20],
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-            ],
-            borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-            ],
-            borderWidth: 1
-        },
-        ]
-    }
-    const config = {
-        type: 'pie',
-        data, 
-        options: {
-            plugins: {
-                tooltip: {
-                    callbacks: {
-                        label: context => {
-                            console.log(context);
-                            const datasetIndex = context.datasetIndex;
-                            const dataPoint = context.dataIndex;
-                            return `${context.label}: ${context.dataset.data[dataPoint]} , claims: ${
-                                context.dataset.claims[dataPoint]
-                            }`;
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-
-    const myChart = new Chart(
-        document.getElementById("myChart"),
-        config,
-    );
+    
 
 
-    var ctx = document.getElementById("qualified-provider-chart");
-    var qualified_provider_chart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['DANICICH, MICHELE', 'DANICICH, MICHELE', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'DANICICH, MICHELE'],
-            datasets: [{
-                label: 'Amount',
-                data: [70, 10, 20, 100, 120, 40],
-                backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                ],
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)'
-                ],
-                borderWidth: 1
-            },
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-                display: true
-            },
-        }
-    });
+    // Get the canvas element and create a context
+var ctx = document.getElementById('myChart').getContext('2d');
 
-    var ctx = document.getElementById("myChart3");
-    var myChart3 = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: ['YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY', 'YOUNG, CINDY'],
-            datasets: [{
-                label: 'Amount',
-                data: [70, 10, 20, 100, 80, 34, 16, 89, 24],
-                backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 99, 132)',
-                ],
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 99, 132)',
-                    'rgb(54, 162, 235)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 205, 86)',
-                    'rgb(255, 99, 132)',
-                ],
-                borderWidth: 1
-            },
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-                display: true
-            },
-        }
-    });
+// Define the data for the chart
+var data = {
+  labels: ['Qualified', 'Unqualified', 'Pending'],
+  datasets: [{
+    data: [2000, 3000, 4000],
+    backgroundColor: ['rgb(255, 99, 132)',
+    'rgb(54, 162, 235)',
+    'rgb(255, 205, 86)']
+  }]
+};
+
+// Define the options for the chart
+var options = {
+  tooltips: {
+    callbacks: {
+      label: function(tooltipItem, data) {
+        var label = data.labels[tooltipItem.index];
+        var value = data.datasets[0].data[tooltipItem.index];
+        var claims = '#' + [20, 30, 40][tooltipItem.index];
+        return label + ': $' + value + ' (' + claims + ' claims)' + '\n';
+      },
+      labelColor: function(tooltipItem, chart) {
+        return {
+          backgroundColor: data.datasets[0].backgroundColor[tooltipItem.index]
+        };
+      }
+    },
+    backgroundColor: 'black',
+    multiKeyBackground: 'black'
+  }
+};
+
+// Create the chart object
+var myChart = new Chart(ctx, {
+  type: 'pie',
+  data: data,
+  options: options
+});
+
+
+    
     var ctx = document.getElementById("bin-chart");
     var bin_chart = new Chart(ctx, {
         type: 'pie',

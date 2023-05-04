@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Pharmacy - Sunrx</title>
+    <title>All Pharmacy - SunRx</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
@@ -367,10 +367,10 @@
                 <div>
                     <main class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div class="md:flex items-baseline justify-between pb-6 pt-16">
-                            <h1 class="pb-4 md:pb-0 text-2xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                            <h1 class="pb-4 md:pb-0 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
                                 All Pharmacy
                             </h1>
-                            <div class="mt-5 flex flex-wrap justify-start gap-4 lg:ml-4 lg:mt-0">
+                            <div class="flex flex-wrap justify-start gap-4 lg:ml-4">
                                 <div>
                                     <button type="button" id="reportrange"
                                         class="relative w-full cursor-default rounded-md bg-white py-1.5 px-3 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-sm leading-6 hover:cursor-pointer dark:bg-gray-500 dark:text-white dark:ring-gray-500 dark:focus:ring-indigo-500"
@@ -779,184 +779,6 @@
                             </div>
                         </section>
                     </main>
-
-
-                    <div class="relative z-10" role="dialog" aria-modal="true">
-                        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity drawer-overlay hidden">
-                        </div>
-
-                        <div
-                            class="fixed inset-0 overflow-hidden drawer-modal translate-x-full ease-in-out duration-300">
-                            <div class="absolute inset-0 overflow-hidden">
-                                <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-                                    <div class="pointer-events-auto relative w-96">
-                                        <div class="absolute left-0 top-0 -ml-8 flex pr-2 pt-4 sm:-ml-10 sm:pr-4">
-                                            <button type="button"
-                                                class="drawer-hide rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
-                                                <span class="sr-only">Close panel</span>
-                                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                    stroke="currentColor" aria-hidden="true">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <div class="h-full overflow-y-auto bg-white dark:bg-gray-700 p-8">
-                                            <div class="space-y-6 pb-16">
-                                                <div>
-                                                    <div
-                                                        class="aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg">
-                                                        <img src="https://placehold.co/600x400" alt=""
-                                                            class="object-cover">
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <h3 class="font-medium text-gray-900 dark:text-white">Information
-                                                    </h3>
-                                                    <dl
-                                                        class="mt-2 divide-y divide-gray-200 dark:divide-gray-600 border-b border-t border-gray-200 dark:border-gray-600">
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Doctor Name</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">COOPER GILMER, KARA</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Pharmacy Name</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Savitz Drug Store</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Claims</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">#01</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Patient Name</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Susan</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Status</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Qualified</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">provider NPI
-                                                            </dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">1437387354</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">RX-Fill</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">000006976480-01</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Toxonomy</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">363LF0000X</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Toxonomy description</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">Lorem ipsum dolor...</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">NDC Description</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">CARBIDOPA 25 MG TABLET</dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Claims Details</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">claim_50724
-                                                            </dd>
-                                                        </div>
-                                                        <div class="flex justify-between py-3 text-sm font-medium">
-                                                            <dt class="text-gray-500 dark:text-white">Claims Amount</dt>
-                                                            <dd class="text-gray-900 dark:text-gray-400">$357.49</dd>
-                                                        </div>
-                                                    </dl>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity hidden modal-overlay">
-                        </div>
-                        <div class="fixed inset-0 z-10 overflow-y-auto invisible modal">
-                            <div
-                                class="bg-white dark:bg-gray-700 px-4 pb-4 pt-5 sm:p-6 sm:pb-4 w-full sm:w-1/2 mx-auto">
-                                <div class="px-4 sm:px-0 flex justify-between items-center">
-                                    <h3 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Patient
-                                        Details</h3>
-                                    <span class="modal-toogle hover:cursor-pointer dark:text-white">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6 18L18 6M6 6l12 12" />
-                                        </svg>
-
-                                    </span>
-                                </div>
-                                <div class="mt-6 border-t border-gray-100 dark:border-gray-600">
-                                    <dl class="divide-y divide-gray-100 dark:divide-gray-600">
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Full
-                                                name</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                Margot Foster</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Third Party Payment </dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $845.18</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Patient Copay</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $70</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">Cost
-                                                Of Goods</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $5.99267</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Pharmacy Dispense</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                $366.07</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Invoice Link</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                No Invoice Found</dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Outgoing Notes </dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                <a href="#" class="hover:text-indigo-600">View Note</a>
-                                            </dd>
-                                        </div>
-                                        <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                                            <dt class="text-sm font-medium leading-6 text-gray-900 dark:text-white">
-                                                Incoming Notes</dt>
-                                            <dd
-                                                class="mt-1 text-sm leading-6 text-gray-700 dark:text-gray-400 sm:col-span-2 sm:mt-0">
-                                                No Notes Found</dd>
-                                        </div>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
